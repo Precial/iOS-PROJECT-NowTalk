@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,9 @@
 		0B5CB98624739F3C00F834F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B5CB98424739F3C00F834F7 /* Main.storyboard */; };
 		0B5CB98824739F3F00F834F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B5CB98724739F3F00F834F7 /* Assets.xcassets */; };
 		0B5CB98B24739F3F00F834F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B5CB98924739F3F00F834F7 /* LaunchScreen.storyboard */; };
+		0B5CB9932473A3AC00F834F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B5CB9922473A3AC00F834F7 /* GoogleService-Info.plist */; };
+		0B5CB9952473ABAD00F834F7 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B5CB9942473ABAD00F834F7 /* RemoteConfigDefaults.plist */; };
+		89104F2988EFE1916F023B0E /* Pods_NowTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FDEE3856B57A208657E2F35 /* Pods_NowTalk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,11 @@
 		0B5CB98724739F3F00F834F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B5CB98A24739F3F00F834F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B5CB98C24739F3F00F834F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B5CB9922473A3AC00F834F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0B5CB9942473ABAD00F834F7 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
+		6FDEE3856B57A208657E2F35 /* Pods_NowTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NowTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91FFC682752CA9E2E1721147 /* Pods-NowTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NowTalk.release.xcconfig"; path = "Target Support Files/Pods-NowTalk/Pods-NowTalk.release.xcconfig"; sourceTree = "<group>"; };
+		ECC2375D189F8A2BB8E59FB8 /* Pods-NowTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NowTalk.debug.xcconfig"; path = "Target Support Files/Pods-NowTalk/Pods-NowTalk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89104F2988EFE1916F023B0E /* Pods_NowTalk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +51,8 @@
 			children = (
 				0B5CB97D24739F3C00F834F7 /* NowTalk */,
 				0B5CB97C24739F3C00F834F7 /* Products */,
+				7E660EB7297B76C48E0A5054 /* Pods */,
+				FC74ACCF07B4B5D57EA440B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +70,31 @@
 				0B5CB97E24739F3C00F834F7 /* AppDelegate.swift */,
 				0B5CB98024739F3C00F834F7 /* SceneDelegate.swift */,
 				0B5CB98224739F3C00F834F7 /* ViewController.swift */,
+				0B5CB9942473ABAD00F834F7 /* RemoteConfigDefaults.plist */,
 				0B5CB98424739F3C00F834F7 /* Main.storyboard */,
 				0B5CB98724739F3F00F834F7 /* Assets.xcassets */,
 				0B5CB98924739F3F00F834F7 /* LaunchScreen.storyboard */,
 				0B5CB98C24739F3F00F834F7 /* Info.plist */,
+				0B5CB9922473A3AC00F834F7 /* GoogleService-Info.plist */,
 			);
 			path = NowTalk;
+			sourceTree = "<group>";
+		};
+		7E660EB7297B76C48E0A5054 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ECC2375D189F8A2BB8E59FB8 /* Pods-NowTalk.debug.xcconfig */,
+				91FFC682752CA9E2E1721147 /* Pods-NowTalk.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FC74ACCF07B4B5D57EA440B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6FDEE3856B57A208657E2F35 /* Pods_NowTalk.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B5CB98F24739F3F00F834F7 /* Build configuration list for PBXNativeTarget "NowTalk" */;
 			buildPhases = (
+				E72854C5591AAC91ADA1902C /* [CP] Check Pods Manifest.lock */,
 				0B5CB97724739F3C00F834F7 /* Sources */,
 				0B5CB97824739F3C00F834F7 /* Frameworks */,
 				0B5CB97924739F3C00F834F7 /* Resources */,
+				D9903BF1A4F8535B2FF0DD96 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,12 +158,56 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B5CB98B24739F3F00F834F7 /* LaunchScreen.storyboard in Resources */,
+				0B5CB9952473ABAD00F834F7 /* RemoteConfigDefaults.plist in Resources */,
+				0B5CB9932473A3AC00F834F7 /* GoogleService-Info.plist in Resources */,
 				0B5CB98824739F3F00F834F7 /* Assets.xcassets in Resources */,
 				0B5CB98624739F3C00F834F7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D9903BF1A4F8535B2FF0DD96 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NowTalk/Pods-NowTalk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NowTalk/Pods-NowTalk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NowTalk/Pods-NowTalk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E72854C5591AAC91ADA1902C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NowTalk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0B5CB97724739F3C00F834F7 /* Sources */ = {
@@ -282,6 +358,7 @@
 		};
 		0B5CB99024739F3F00F834F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECC2375D189F8A2BB8E59FB8 /* Pods-NowTalk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +377,7 @@
 		};
 		0B5CB99124739F3F00F834F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91FFC682752CA9E2E1721147 /* Pods-NowTalk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
