@@ -21,6 +21,9 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     
+    var imgdownloadURL = ""
+    
+    
     /* 이미지 컨트롤러 가져오기 */
       let picker = UIImagePickerController()
 
@@ -38,12 +41,49 @@ class SignupViewController: UIViewController {
          Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (user, error) in
             let uid = user?.user.uid
             
-            // DB에 회원가입 유저 정보 저장
+          
+            
+            // Firebase Storage 이미지 저장
+    
+            /* 전송할 이미지를 데이터로 변환 */
+                                        guard let sendimage = self.imageView.image, let dataa = sendimage.jpegData(compressionQuality: 1.0) else {
+                                                   return
+                                               }
+                                         
+                                        /* 이미지를 저장할 path 설정 */
+                                       
+                                        let riversRef = Storage.storage().reference().child("userImages").child(uid!)
+                                        
+                                        
+                                        /* 사용자가 선택한 이미지를 서버로 전송하는 부분 */
+                                        riversRef.putData(dataa, metadata: nil) { (metadata, error) in
+                                        guard let metadata = metadata else {
+                                        // Uh-oh, an error occurred!
+                                        return
+                                        }
+                                        
+                                        // Metadata contains file metadata such as size, content-type.
+                                        let size = metadata.size
+                                        // You can also access to download URL after upload.
+                                        riversRef.downloadURL { (url, error) in
+                                        guard let downloadURL = url else {
+                                           
+                                        return
+                                                  }
+                                             self.imgdownloadURL = "\(downloadURL)"
+                                     
+                                              }
+                                         
+                                           
+                                          
+                                                      
+                                            
+                                          }
+              print("log[다운로드 경로]: \(self.imgdownloadURL)")
             Database.database().reference().child("users").child(uid!).setValue(["name":self.name.text!])
             
-            
-            
         }
+        
     }
     
     /* 회원가입 버튼 클릭 시 */
