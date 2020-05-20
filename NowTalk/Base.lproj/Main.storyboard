@@ -248,6 +248,14 @@
                                 <rect key="frame" x="115" y="132" width="144" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWJ-jA-42F">
+                                <rect key="frame" x="279" y="132" width="47" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="upload"/>
+                                <connections>
+                                    <action selector="addImage:" destination="D8a-gp-sbN" eventType="touchUpInside" id="etb-2S-K07"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Xtc-zd-leX"/>
@@ -255,6 +263,7 @@
                     <navigationItem key="navigationItem" id="2r0-aj-3fH"/>
                     <connections>
                         <outlet property="email" destination="4kZ-eD-zxx" id="2PB-dz-eFT"/>
+                        <outlet property="imageView" destination="Vc3-K7-sGQ" id="Hl0-ha-mLs"/>
                         <outlet property="name" destination="fo7-Pk-q6v" id="I0E-dp-c1X"/>
                         <outlet property="password" destination="1wf-jS-Ca3" id="H3Z-MQ-qmR"/>
                     </connections>
