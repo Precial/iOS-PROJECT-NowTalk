@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
@@ -34,11 +35,11 @@ class LoginViewController: UIViewController {
        // statusBar.backgroundColor = UIColor(hex: color)
         loginButton.backgroundColor = UIColor(hex: color)
         signIn.backgroundColor = UIColor(hex: color)
-        
-        
-        
     }
     
+    
+    
+
 
  
 

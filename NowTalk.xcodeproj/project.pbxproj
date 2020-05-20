@@ -16,6 +16,7 @@
 		0B5CB9932473A3AC00F834F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B5CB9922473A3AC00F834F7 /* GoogleService-Info.plist */; };
 		0B5CB9952473ABAD00F834F7 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B5CB9942473ABAD00F834F7 /* RemoteConfigDefaults.plist */; };
 		0B5CB9972473B60700F834F7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB9962473B60700F834F7 /* LoginViewController.swift */; };
+		0B5CB9992474ACCA00F834F7 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB9982474ACCA00F834F7 /* SignupViewController.swift */; };
 		89104F2988EFE1916F023B0E /* Pods_NowTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FDEE3856B57A208657E2F35 /* Pods_NowTalk.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		0B5CB9922473A3AC00F834F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0B5CB9942473ABAD00F834F7 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		0B5CB9962473B60700F834F7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0B5CB9982474ACCA00F834F7 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		6FDEE3856B57A208657E2F35 /* Pods_NowTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NowTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FFC682752CA9E2E1721147 /* Pods-NowTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NowTalk.release.xcconfig"; path = "Target Support Files/Pods-NowTalk/Pods-NowTalk.release.xcconfig"; sourceTree = "<group>"; };
 		ECC2375D189F8A2BB8E59FB8 /* Pods-NowTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NowTalk.debug.xcconfig"; path = "Target Support Files/Pods-NowTalk/Pods-NowTalk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				0B5CB9962473B60700F834F7 /* LoginViewController.swift */,
 				0B5CB9942473ABAD00F834F7 /* RemoteConfigDefaults.plist */,
 				0B5CB98424739F3C00F834F7 /* Main.storyboard */,
+				0B5CB9982474ACCA00F834F7 /* SignupViewController.swift */,
 				0B5CB98724739F3F00F834F7 /* Assets.xcassets */,
 				0B5CB98924739F3F00F834F7 /* LaunchScreen.storyboard */,
 				0B5CB98C24739F3F00F834F7 /* Info.plist */,
@@ -219,6 +222,7 @@
 			files = (
 				0B5CB9972473B60700F834F7 /* LoginViewController.swift in Sources */,
 				0B5CB98324739F3C00F834F7 /* ViewController.swift in Sources */,
+				0B5CB9992474ACCA00F834F7 /* SignupViewController.swift in Sources */,
 				0B5CB97F24739F3C00F834F7 /* AppDelegate.swift in Sources */,
 				0B5CB98124739F3C00F834F7 /* SceneDelegate.swift in Sources */,
 			);

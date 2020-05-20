@@ -12,7 +12,7 @@ pod 'Firebase/Analytics'
 pod 'Firebase/Core'
 pod 'Firebase/RemoteConfig'
 pod 'TextFieldEffects'
-
-
+pod 'Firebase/Database'
+pod 'Firebase/Auth'
 
 end
