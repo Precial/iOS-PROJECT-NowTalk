@@ -92,7 +92,7 @@ class SignupViewController: UIViewController {
     
     /* 사용자 정보 DB에 저장 */
     func userAddDate(uid:String ,imgUrl: String, userName: String){
-        let values = ["userName":userName,"profileImageUrl":imgUrl]
+        let values = ["userName":userName,"profileImageUrl":imgUrl,"uid":Auth.auth().currentUser?.uid]
         Database.database().reference().child("users").child(uid).setValue(values, withCompletionBlock: { (err,ref) in
             
             if(err==nil) {

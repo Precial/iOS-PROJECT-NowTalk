@@ -180,7 +180,9 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let view  = self.storyboard?.instantiateViewController(withIdentifier: "ChatViewController")
+        let view  = self.storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as? ChatViewController
+        view?.destinationUid = self.array[indexPath.row].uid
+        
         self.navigationController?.pushViewController(view!, animated: true)
         
     }

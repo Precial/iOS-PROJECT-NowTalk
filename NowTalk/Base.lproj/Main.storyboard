@@ -117,20 +117,39 @@
             </objects>
             <point key="canvasLocation" x="3922.4000000000001" y="116.74876847290641"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="HbZ-6M-Nuc">
             <objects>
-                <viewController storyboardIdentifier="ChatViewController" id="NbH-sm-rER" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatViewController" id="NbH-sm-rER" customClass="ChatViewController" customModule="NowTalk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Sq-Ao-4jj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3si-nK-P03">
+                                <rect key="frame" x="27" y="644" width="260" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77N-3W-873">
+                                <rect key="frame" x="329" y="648" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="전송"/>
+                                <connections>
+                                    <action selector="sendBtn:" destination="NbH-sm-rER" eventType="touchUpInside" id="VQo-Ce-Zf2"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="WqL-4z-CsM"/>
                     </view>
+                    <connections>
+                        <outlet property="textfiled_message" destination="3si-nK-P03" id="1Kl-Iq-qdI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cnw-IS-71X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4727" y="115"/>
+            <point key="canvasLocation" x="4725.6000000000004" y="114.53201970443351"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Vxu-jw-Y11">
