@@ -33,7 +33,65 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     public var destinationUid: String? // 나중에 내가 채팅할 대상의 uid
     
     
+    override func viewDidLoad() {
+
+        super.viewDidLoad()
+
+        uid = Auth.auth().currentUser?.uid
+
+
+        checkChatRoom()
+        self.tabBarController?.tabBar.isHidden  = true
+      
+        
+        
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name(rawValue: "UIKeyboardWillShow"), object: nil)
+        
+                NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name(rawValue: "UIKeyboardWillHide"), object: nil)
+        
+    }
     
+    
+    // 컨트롤러 종료시
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    
+    @objc func keyboardWillShow(notification : Notification){
+         UIView.animate(withDuration: 0 , animations: {
+             self.view.layoutIfNeeded()
+         }, completion: {
+             (complete) in
+            
+            if self.comments.count > 0{
+
+                self.tableview.scrollToRow(at: IndexPath(item:self.comments.count - 1,section:0), at: UITableView.ScrollPosition.bottom, animated: true)
+
+                  
+
+              }
+            
+
+         })
+
+     }
+    
+    
+    @objc func keyboardWillHide(notification:Notification) {
+        self.view.layoutIfNeeded()
+    }
+    
+    @objc func dismissKeyboard(){
+        self.view.endEditing(true)
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -111,21 +169,6 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     
 
-    override func viewDidLoad() {
-
-        super.viewDidLoad()
-
-        uid = Auth.auth().currentUser?.uid
-
-
-        checkChatRoom()
-
-        // Do any additional setup after loading the view.
-
-    }
-
-
-
     override func didReceiveMemoryWarning() {
 
         super.didReceiveMemoryWarning()
@@ -186,7 +229,9 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
             ]
 
-            Database.database().reference().child("chatrooms").child(chatRoomUid!).child("comments").childByAutoId().setValue(value)
+            Database.database().reference().child("chatrooms").child(chatRoomUid!).child("comments").childByAutoId().setValue(value, withCompletionBlock: { (err, ref) in
+                self.textfiled_message.text = ""
+            })
 
         }
 
@@ -266,6 +311,13 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                        }
 
                        self.tableview.reloadData()
+                        if self.comments.count > 0{
+
+                            self.tableview.scrollToRow(at: IndexPath(item:self.comments.count - 1,section:0), at: UITableView.ScrollPosition.bottom, animated: true)
+
+                              
+
+                          }
 
             
             
