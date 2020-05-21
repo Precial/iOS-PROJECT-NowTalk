@@ -92,9 +92,18 @@ class SignupViewController: UIViewController {
     
     /* 사용자 정보 DB에 저장 */
     func userAddDate(uid:String ,imgUrl: String, userName: String){
-        Database.database().reference().child("users").child(uid).setValue(["userName":userName,"profileImageUrl":imgUrl])
+        let values = ["userName":userName,"profileImageUrl":imgUrl]
+        Database.database().reference().child("users").child(uid).setValue(values, withCompletionBlock: { (err,ref) in
+            
+            if(err==nil) {
+                self.cancleEvent()
+            }
+            
+        })
         
-        dismiss(animated: true, completion: nil)
+        
+        
+        //dismiss(animated: true, completion: nil)
     }
     
     
@@ -105,9 +114,12 @@ class SignupViewController: UIViewController {
     
     /* 가입취소 버튼 클릭 시 */
     @IBAction func cancleBtn(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        cancleEvent()
     }
     
+    func cancleEvent(){
+        dismiss(animated: true, completion: nil)
+    }
     
 
 
