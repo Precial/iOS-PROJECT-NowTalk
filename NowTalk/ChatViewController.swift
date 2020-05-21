@@ -16,6 +16,7 @@ import Firebase
 class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     
+    @IBOutlet weak var bottomContraint: NSLayoutConstraint!
     
 
     var uid: String?
@@ -65,20 +66,44 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     
+    
+    
+    
+
+    
+    
     @objc func keyboardWillShow(notification : Notification){
+        
+    if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+          let keybaordRectangle = keyboardFrame.cgRectValue
+          let keyboardHeight = keybaordRectangle.height
+             print("log:[키보드 사이즈는]\(keyboardHeight)")
+          self.bottomContraint.constant = keyboardHeight
+        }
+        
+        
+        
+        if let keyboardSize = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue{
+           // self.bottomContraint.constant = keyboardSize.height
+            self.bottomContraint.constant = 150
+            print("log:[키보드 사이즈는]\(keyboardSize.height)")
+            
+        }
+        
+        
          UIView.animate(withDuration: 0 , animations: {
              self.view.layoutIfNeeded()
          }, completion: {
              (complete) in
-            
+
             if self.comments.count > 0{
 
                 self.tableview.scrollToRow(at: IndexPath(item:self.comments.count - 1,section:0), at: UITableView.ScrollPosition.bottom, animated: true)
 
-                  
+
 
               }
-            
+
 
          })
 
@@ -86,6 +111,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     
     @objc func keyboardWillHide(notification:Notification) {
+        self.bottomContraint.constant = 20
         self.view.layoutIfNeeded()
     }
     
