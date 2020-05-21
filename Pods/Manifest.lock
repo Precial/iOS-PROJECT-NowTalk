@@ -106,6 +106,7 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - ObjectMapper (3.5.3)
   - PromisesObjC (1.2.8)
   - Protobuf (3.12.0)
   - SnapKit (5.0.1)
@@ -118,6 +119,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/RemoteConfig
   - Firebase/Storage
+  - ObjectMapper (~> 3.1)
   - SnapKit (~> 5.0.0)
   - TextFieldEffects
 
@@ -143,6 +145,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - ObjectMapper
     - PromisesObjC
     - Protobuf
     - SnapKit
@@ -169,11 +172,12 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: cea130bbfe5a7edc8d06d3f0d17288c32ffe9925
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Protobuf: 2793fcd0622a00b546c60e7cbbcc493e043e9bb9
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
-PODFILE CHECKSUM: 358357dbf9258f6e7f88d618d2fb5bf482c4b1ae
+PODFILE CHECKSUM: a11275ed8643d6787ebe8718f5bb4e96cc8278c5
 
 COCOAPODS: 1.9.1

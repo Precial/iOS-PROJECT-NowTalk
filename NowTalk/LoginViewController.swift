@@ -62,6 +62,11 @@ class LoginViewController: UIViewController {
 
      }
     
+    /* 키보드창 내리기 */
+      override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+            self.view.endEditing(true)
+      }
+    
     
     func loginEvent(){
        /* 테스트 모드 */

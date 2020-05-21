@@ -53,6 +53,8 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.array.removeAll()
 
                 
+                let myUid = Auth.auth().currentUser?.uid
+                
 
                 for child in snapshot.children {
 
@@ -64,6 +66,15 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
                     userModel.setValuesForKeys(fchild.value as! [String : Any])
 
+                    
+                    
+                    if(userModel.uid == myUid) {
+                        continue
+                    }
+                    
+                    
+                    
+                    
                     self.array.append(userModel)
 
                     
