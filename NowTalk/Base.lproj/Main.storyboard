@@ -37,7 +37,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w61-bD-jMf" customClass="HoshiTextField" customModule="TextFieldEffects">
                                 <rect key="frame" x="50" y="336" width="275" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
@@ -51,8 +51,8 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nh0-lM-77p" customClass="HoshiTextField" customModule="TextFieldEffects">
                                 <rect key="frame" x="50" y="403" width="275" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                         <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -63,12 +63,15 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejM-pG-xhl">
-                                <rect key="frame" x="50" y="485" width="275" height="40"/>
+                                <rect key="frame" x="50" y="484" width="275" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginBtn:" destination="P6g-Cu-PEF" eventType="touchUpInside" id="3W2-hp-ktB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJf-m6-ODc">
                                 <rect key="frame" x="50" y="548" width="275" height="40"/>
@@ -85,14 +88,66 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="XOp-lf-5mr"/>
                     </view>
+                    <navigationItem key="navigationItem" id="l9x-YZ-gsA"/>
                     <connections>
+                        <outlet property="email" destination="w61-bD-jMf" id="9JJ-sP-R5Y"/>
                         <outlet property="loginButton" destination="ejM-pG-xhl" id="oFA-e9-beE"/>
+                        <outlet property="password" destination="Nh0-lM-77p" id="yKf-c8-7vU"/>
                         <outlet property="signIn" destination="GJf-m6-ODc" id="i3X-hQ-hIH"/>
+                        <segue destination="J7r-3d-Rg6" kind="presentation" identifier="loginNext" modalPresentationStyle="fullScreen" id="UJ3-4l-g2i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="72E-4N-Wba" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="904.79999999999995" y="117.48768472906404"/>
+            <point key="canvasLocation" x="1150" y="112"/>
+        </scene>
+        <!--People View Controller-->
+        <scene sceneID="lbQ-f9-K4k">
+            <objects>
+                <viewController storyboardIdentifier="PeopleViewController" id="ymQ-K3-PAG" customClass="PeopleViewController" customModule="NowTalk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DJK-Sv-Cn4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="IQP-ln-lsq"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="people" selectedImage="people" id="0zK-6l-Ryc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dA9-1P-5fN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2980" y="116.74876847290641"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Vxu-jw-Y11">
+            <objects>
+                <viewController id="mma-cn-g0O" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xgt-O6-sg2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="hPK-nq-ZaY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="chat" selectedImage="chat" id="Jo1-1O-zCb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tmK-wz-lVt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2991" y="787"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="D43-Xg-5qW">
+            <objects>
+                <viewController id="Eba-RG-zDf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bUS-5T-VPh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="7Bs-mx-cq7"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="account" selectedImage="account" id="5vb-TR-pAa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mxs-3Q-zL6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2991" y="1482"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="Fcl-ay-6X2">
@@ -207,7 +262,7 @@
                                 <rect key="frame" x="48" y="343" width="275" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                         <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -270,13 +325,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wPM-hH-QOP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="905" y="850"/>
+            <point key="canvasLocation" x="1126" y="890"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="TEx-4i-pOA">
+            <objects>
+                <tabBarController storyboardIdentifier="MainViewTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="J7r-3d-Rg6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DyK-m6-6Qo">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ymQ-K3-PAG" kind="relationship" relationship="viewControllers" id="0rf-83-2jv"/>
+                        <segue destination="mma-cn-g0O" kind="relationship" relationship="viewControllers" id="5ic-NJ-Xf8"/>
+                        <segue destination="Eba-RG-zDf" kind="relationship" relationship="viewControllers" id="7E7-hT-rFk"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dsm-sF-1Yx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2037.5999999999999" y="116.74876847290641"/>
         </scene>
     </scenes>
     <resources>
+        <image name="account" width="64" height="64"/>
+        <image name="chat" width="64" height="64"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
         <image name="circle" catalog="system" width="128" height="121"/>
         <image name="image_default" width="512" height="512"/>
         <image name="loading_icon" width="256" height="256"/>
+        <image name="people" width="64" height="64"/>
     </resources>
 </document>

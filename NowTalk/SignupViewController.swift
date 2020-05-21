@@ -70,21 +70,33 @@ class SignupViewController: UIViewController {
                                            
                                         return
                                                   }
-                                             self.imgdownloadURL = "\(downloadURL)"
-                                     
+                                          print("log: \(downloadURL)")
+                                            self.imgdownloadURL = "\(downloadURL)"
+                                            
+                                            print("log [1] = \(self.imgdownloadURL)")
+                                            print("log [2] = \(uid!)")
+                                            
+                                            let sendUid = "\(uid!)"
+                                            
+                                            self.userAddDate(uid: sendUid, imgUrl: self.imgdownloadURL,userName: self.name.text!)
                                               }
                                          
-                                           
-                                          
-                                                      
-                                            
                                           }
-              print("log[다운로드 경로]: \(self.imgdownloadURL)")
-            Database.database().reference().child("users").child(uid!).setValue(["name":self.name.text!])
+            
+               
+          //  Database.database().reference().child("users").child(uid!).setValue(["userName":self.name.text!])
             
         }
         
     }
+    
+    /* 사용자 정보 DB에 저장 */
+    func userAddDate(uid:String ,imgUrl: String, userName: String){
+        Database.database().reference().child("users").child(uid).setValue(["userName":userName,"profileImageUrl":imgUrl])
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     /* 회원가입 버튼 클릭 시 */
     @IBAction func createBtn(_ sender: Any) {
@@ -96,6 +108,9 @@ class SignupViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    
+
+
     /* 이미지 불러오기 이벤트 */
     @IBAction func addImage(_ sender: Any) {
             let alert =  UIAlertController(title: "원하는 타이틀", message: "원하는 메세지", preferredStyle: .actionSheet)
@@ -128,6 +143,10 @@ class SignupViewController: UIViewController {
                   print("Camera not available")
               }
           }
+    
+    
+    
+    
     
 
 }
