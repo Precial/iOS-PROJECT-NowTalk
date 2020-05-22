@@ -9,6 +9,8 @@
 import UIKit
 import SnapKit
 import Firebase
+import Kingfisher
+
 
 class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -142,22 +144,13 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
 
         
-
-        URLSession.shared.dataTask(with: URL(string: array[indexPath.row].profileImageUrl!)!) { (data, response, err) in
-
-            
-
-            DispatchQueue.main.async {
-
-                imageview.image = UIImage(data: data!)
-
-                imageview.layer.cornerRadius = imageview.frame.size.width/2
-
-                imageview.clipsToBounds = true
-
-            }
-
-        }.resume()
+        let url = URL(string: array[indexPath.row].profileImageUrl!)
+        
+        imageview.layer.cornerRadius = 50/2
+        imageview.clipsToBounds = true
+        imageview.kf.setImage(with: url)
+        
+  
 
         
 

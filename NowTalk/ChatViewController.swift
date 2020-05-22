@@ -10,6 +10,7 @@
 
 import UIKit
 import Firebase
+import Kingfisher
 
 
 
@@ -141,26 +142,13 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
               
 
               let url = URL(string:(self.userModel?.profileImageUrl)!)
+            
+            view.imageview_profile.layer.cornerRadius = view.imageview_profile.frame.width/2
+            view.imageview_profile.clipsToBounds = true
+            view.imageview_profile.kf.setImage(with: url)
+            
 
-              URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, err) in
-
-                  
-
-                  DispatchQueue.main.async {
-
-                      
-
-                      view.imageview_profile.image = UIImage(data: data!)
-
-                      view.imageview_profile.layer.cornerRadius = view.imageview_profile.frame.width/2
-
-                      view.imageview_profile.clipsToBounds = true
-
-                      
-
-                  }
-
-              }).resume()
+   
             
             if let time = self.comments[indexPath.row].timestamp{
 
