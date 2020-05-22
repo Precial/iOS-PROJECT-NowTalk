@@ -113,6 +113,15 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
               view.label_message.numberOfLines = 0
 
+            if let time = self.comments[indexPath.row].timestamp{
+
+                view.label_timestamp.text = time.toDayTime
+
+            }
+
+            
+            
+            
               return view
 
               
@@ -152,6 +161,14 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                   }
 
               }).resume()
+            
+            if let time = self.comments[indexPath.row].timestamp{
+
+                view.label_timestamp.text = time.toDayTime
+
+            }
+
+            
 
               return view
     
@@ -224,8 +241,9 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
                     "uid" : uid!,
 
-                    "message" : textfiled_message.text!
+                    "message" : textfiled_message.text!,
 
+                "timestamp" : ServerValue.timestamp()
               
 
             ]
@@ -356,8 +374,28 @@ extension ChatViewController {
    
 
 
+
+extension Int{
+
+    var toDayTime :String{
+
+        let dateFormatter = DateFormatter()
+
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+
+        dateFormatter.dateFormat = "yyyy.MM.dd HH:mm"
+
+        let date = Date(timeIntervalSince1970: Double(self)/1000)
+
+        return dateFormatter.string(from: date)
+    }
+}
+
+
+
 class MymessageCell : UITableViewCell {
     
+    @IBOutlet weak var label_timestamp: UILabel!
     @IBOutlet weak var label_message: UILabel!
 }
 
@@ -366,5 +404,6 @@ class DestinationMessageCell : UITableViewCell {
     @IBOutlet weak var label_message: UILabel!
     @IBOutlet weak var imageview_profile: UIImageView!
     @IBOutlet weak var label_name: UILabel!
+    @IBOutlet weak var label_timestamp: UILabel!
     
 }
