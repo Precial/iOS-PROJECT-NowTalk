@@ -173,14 +173,30 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let label_comment = cell.label_comment!
         label_comment.snp.makeConstraints { (m) in
-            m.right.equalTo(cell)
-            m.centerY.equalTo(cell)
+            m.centerX.equalTo(cell.uiview_comment_background)
+            m.centerY.equalTo(cell.uiview_comment_background)
           
         }
         
         if let comment = array[indexPath.row].comment {
             label_comment.text = comment
         }
+        
+        
+        cell.uiview_comment_background.snp.makeConstraints { (m) in
+            m.right.equalTo(cell).offset(-10)
+            m.centerY.equalTo(cell)
+            if let count = label_comment.text?.count {
+                m.width.equalTo(count * 10)
+            }else{
+                m.width.equalTo(0)
+            }
+            m.height.equalTo(30)
+        }
+        cell.uiview_comment_background.backgroundColor  = UIColor.lightGray
+        
+        
+        
         
 
         return cell
@@ -228,7 +244,7 @@ class PeopleViewTableCell: UITableViewCell{
 
     var label: UILabel! = UILabel()
     var label_comment : UILabel! = UILabel()
-
+    var uiview_comment_background : UIView = UIView()
     
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
@@ -238,6 +254,7 @@ class PeopleViewTableCell: UITableViewCell{
         self.addSubview(imageview)
 
         self.addSubview(label)
+        self.addSubview(uiview_comment_background)
         self.addSubview(label_comment)
 
     }

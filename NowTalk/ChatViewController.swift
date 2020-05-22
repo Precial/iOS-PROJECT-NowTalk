@@ -33,6 +33,13 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var comments : [ChatModel.Comment] = []
     var userModel: UserModel?
     
+    
+    var databaseRef : DatabaseReference?
+    var observe : UInt?
+    
+    
+    
+    
 
     public var destinationUid: String? // 나중에 내가 채팅할 대상의 uid
     
@@ -72,6 +79,9 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self)
         self.tabBarController?.tabBar.isHidden = false
+        
+        
+        databaseRef?.removeObserver(withHandle: observe!)
     }
     
     
@@ -121,7 +131,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             }
 
             
-            
+            setReadCount(label: view.label_read_counter, position: indexPath.row)
             
               return view
 
@@ -156,7 +166,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
             }
 
-            
+            setReadCount(label: view.label_read_counter, position: indexPath.row)
 
               return view
     
@@ -293,6 +303,33 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
     
     
+    func setReadCount(label:UILabel?, position: Int?){
+        
+        let readCount = self.comments[position!].readUsers.count
+        Database.database().reference().child("chatrooms").child(chatRoomUid!).child("users").observeSingleEvent(of: DataEventType.value, with: {
+            (datasnapshot) in
+            
+            let dic = datasnapshot.value as! [String:Any]
+            let noReadCount = dic.count - readCount
+            
+            
+            if(noReadCount > 0) {
+                label?.isHidden = false
+                label?.text = String(noReadCount)
+            } else{
+                label?.isHidden = true
+            }
+            
+        })
+        
+        
+        
+    }
+    
+    
+    
+    
+    
     
 
     
@@ -301,30 +338,40 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
     func getMessageList(){
 
-        Database.database().reference().child("chatrooms").child(self.chatRoomUid!).child("comments").observe(DataEventType.value, with: {
+        databaseRef = Database.database().reference().child("chatrooms").child(self.chatRoomUid!).child("comments")
+        observe = databaseRef?.observe(DataEventType.value, with: {
             
             (datasnapshot) in
             
             self.comments.removeAll()
-
+                
+            var readUserDic : Dictionary<String,AnyObject> = [:]
                        
 
                        for item in datasnapshot.children.allObjects as! [DataSnapshot]{
-
+                        let key = item.key as String
                            let comment = ChatModel.Comment(JSON: item.value as! [String:AnyObject])
-
+                        comment?.readUsers[self.uid!] = true
+                        readUserDic[key] = comment?.toJSON() as! NSDictionary
                            self.comments.append(comment!)
 
                        }
+            
+                        let nsDic  = readUserDic as NSDictionary
+        
+            datasnapshot.ref.updateChildValues(nsDic as! [AnyHashable : Any], withCompletionBlock: {(err, ref) in
+                
+                self.tableview.reloadData()
+                                   if self.comments.count > 0{
 
-                       self.tableview.reloadData()
-                        if self.comments.count > 0{
+                                       self.tableview.scrollToRow(at: IndexPath(item:self.comments.count - 1,section:0), at: UITableView.ScrollPosition.bottom, animated: true)
 
-                            self.tableview.scrollToRow(at: IndexPath(item:self.comments.count - 1,section:0), at: UITableView.ScrollPosition.bottom, animated: true)
-
-                              
-
-                          }
+                                
+                                     }
+                
+            })
+            
+                      
 
             
             
@@ -385,6 +432,7 @@ class MymessageCell : UITableViewCell {
     
     @IBOutlet weak var label_timestamp: UILabel!
     @IBOutlet weak var label_message: UILabel!
+    @IBOutlet weak var label_read_counter: UILabel!
 }
 
 
@@ -393,5 +441,6 @@ class DestinationMessageCell : UITableViewCell {
     @IBOutlet weak var imageview_profile: UIImageView!
     @IBOutlet weak var label_name: UILabel!
     @IBOutlet weak var label_timestamp: UILabel!
+    @IBOutlet weak var label_read_counter: UILabel!
     
 }
