@@ -87,6 +87,13 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+           self.view.endEditing(true)
+          
+       }
+    
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
           
@@ -167,6 +174,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                self.view.endEditing(true)
          }
 
+    
+    
     
     @IBAction func sendBtn(_ sender: Any) {
         createRoom()
