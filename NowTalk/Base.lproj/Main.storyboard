@@ -330,22 +330,23 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2020.05.05 11:11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMh-Tq-Stt">
-                                                    <rect key="frame" x="286" y="10" width="73.666666666666686" height="11"/>
+                                                    <rect key="frame" x="276" y="11" width="73.666666666666686" height="11"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                     <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="AMh-Tq-Stt" firstAttribute="top" secondItem="UdG-D4-ofs" secondAttribute="top" constant="9" id="1fq-4m-1hz"/>
                                                 <constraint firstAttribute="trailing" secondItem="vwH-1l-CV8" secondAttribute="trailing" id="GdS-OF-IBm"/>
                                                 <constraint firstItem="eic-Yx-hjw" firstAttribute="leading" secondItem="vh0-az-14D" secondAttribute="trailing" constant="10" id="Pyp-ZY-5mG"/>
                                                 <constraint firstItem="vwH-1l-CV8" firstAttribute="top" secondItem="UdG-D4-ofs" secondAttribute="top" constant="10" id="Ruz-aK-3Hh"/>
+                                                <constraint firstItem="eic-Yx-hjw" firstAttribute="top" secondItem="hGe-0H-Qf9" secondAttribute="bottom" constant="16" id="V2P-Za-exM"/>
                                                 <constraint firstItem="hGe-0H-Qf9" firstAttribute="leading" secondItem="vh0-az-14D" secondAttribute="trailing" constant="8" id="Y8M-1Z-Dh9"/>
+                                                <constraint firstItem="AMh-Tq-Stt" firstAttribute="top" secondItem="UdG-D4-ofs" secondAttribute="top" constant="10" id="aRt-sF-8eZ"/>
                                                 <constraint firstItem="hGe-0H-Qf9" firstAttribute="top" secondItem="UdG-D4-ofs" secondAttribute="topMargin" id="eeU-pT-CDb"/>
                                                 <constraint firstItem="eic-Yx-hjw" firstAttribute="bottom" secondItem="UdG-D4-ofs" secondAttribute="bottomMargin" id="p7c-GR-cnw"/>
                                                 <constraint firstItem="vh0-az-14D" firstAttribute="centerY" secondItem="UdG-D4-ofs" secondAttribute="centerY" id="pUJ-kP-dRh"/>
-                                                <constraint firstAttribute="trailing" secondItem="AMh-Tq-Stt" secondAttribute="trailing" constant="-21" id="sFr-bl-pBA"/>
+                                                <constraint firstAttribute="trailing" secondItem="AMh-Tq-Stt" secondAttribute="trailing" constant="23" id="u8a-pH-sWK"/>
                                                 <constraint firstItem="vh0-az-14D" firstAttribute="leading" secondItem="UdG-D4-ofs" secondAttribute="leading" constant="15" id="yBG-dB-JPz"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -379,7 +380,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tmK-wz-lVt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2980" y="913"/>
+            <point key="canvasLocation" x="2980" y="912.5615763546798"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="D43-Xg-5qW">
