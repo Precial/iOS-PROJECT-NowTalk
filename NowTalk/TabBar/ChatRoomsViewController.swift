@@ -42,7 +42,7 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
 
                 for item in datasnapshot.children.allObjects as! [DataSnapshot]{
 
-                    
+                    self.chatrooms.removeAll()
 
                     if let chatroomdic = item.value as? [String:AnyObject]{
 
@@ -82,23 +82,84 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
 
         
 
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-            let cell = tableView.dequeueReusableCell(withIdentifier: "RowCell", for:indexPath)
+               let cell = tableView.dequeueReusableCell(withIdentifier: "RowCell", for:indexPath) as! CustomCell
 
-            
+               
 
-            
+               var destinationUid: String?
 
-            return cell
+               
 
-            
+               for item in chatrooms[indexPath.row].users{
 
-            
+                   if(item.key != self.uid){
 
-        }
+                       destinationUid = item.key
+
+                   }
+
+               }
+
+               Database.database().reference().child("users").child(destinationUid!).observeSingleEvent(of: DataEventType.value, with: { (datasnapshot) in
+
+                   
+
+                   let userModel = UserModel()
+
+                   userModel.setValuesForKeys(datasnapshot.value as! [String:AnyObject])
+
+                   
+
+                   cell.label_title.text = userModel.userName
+
+                   let url = URL(string: userModel.profileImageUrl!)
+
+                   URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, err) in
+
+                       
+
+                       DispatchQueue.main.sync {
+
+                           cell.imageview.image = UIImage(data: data!)
+
+                           cell.imageview.layer.cornerRadius = cell.imageview.frame.width/2
+
+                           cell.imageview.layer.masksToBounds = true
+
+                       }
+
+                   }).resume()
+
+                   
+
+                   let lastMessagekey = self.chatrooms[indexPath.row].comments.keys.sorted(){$0>$1}
+
+                   cell.label_lastmessage.text = self.chatrooms[indexPath.row].comments[lastMessagekey[0]]?.message
+
+                   
+
+               })
+
+               
+
+               return cell
+
+               
+
+               
+
+           }
 
         
+        
+    override func viewDidAppear(_ animated: Bool) {
+        viewDidLoad()
+    }
+    
+    
+    
 
         override func didReceiveMemoryWarning() {
 
@@ -131,3 +192,12 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
         
 
     }
+
+
+class CustomCell: UITableViewCell {
+    
+    @IBOutlet weak var imageview: UIImageView!
+    @IBOutlet weak var label_title: UILabel!
+    @IBOutlet weak var label_lastmessage: UILabel!
+    
+}
