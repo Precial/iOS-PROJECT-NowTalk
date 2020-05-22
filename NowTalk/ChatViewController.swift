@@ -46,6 +46,13 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         checkChatRoom()
         self.tabBarController?.tabBar.isHidden  = true
       
+
+       
+
+       
+       
+
+      
         
         
         // [x] TODO: 키보드 디텍션
