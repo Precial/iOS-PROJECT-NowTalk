@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         box.snp.makeConstraints { (make) in
             make.center.equalTo(self.view)
         }
-        box.image = #imageLiteral(resourceName: "loading_icon")
+        box.image = #imageLiteral(resourceName: "logo")
         // self.view.backgroundColor = UIColor(hex: "#000000") // 배경색 변경
     }
     
