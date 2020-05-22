@@ -330,7 +330,8 @@ extension ChatViewController {
             bottomLayout.constant = adjustmentHeight
             print("log:[키보드 사이즈 확인]: \(adjustmentHeight)")
         } else {
-           bottomLayout.constant = 0
+           bottomLayout.constant = 20
+            bottomContraint.constant = -15
         }
         
         print("---> Keyboard End Frame: \(keyboardFrame)")

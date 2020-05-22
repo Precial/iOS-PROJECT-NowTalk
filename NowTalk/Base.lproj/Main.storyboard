@@ -126,9 +126,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77N-3W-873">
-                                <rect key="frame" x="313" y="748" width="46" height="30"/>
+                                <rect key="frame" x="313" y="778" width="46" height="0.0"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="2pG-hl-wFI"/>
+                                    <constraint firstAttribute="height" id="2pG-hl-wFI"/>
                                     <constraint firstAttribute="width" constant="46" id="eyF-vH-N4y"/>
                                 </constraints>
                                 <state key="normal" title="전송"/>
@@ -137,7 +137,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="whh-YV-iH8">
-                                <rect key="frame" x="0.0" y="44" width="375" height="693"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="708"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyMessageCell" id="xHG-XO-oN8" customClass="MymessageCell" customModule="NowTalk" customModuleProvider="target">
@@ -232,7 +232,7 @@
                                 </connections>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3si-nK-P03">
-                                <rect key="frame" x="13" y="745" width="292" height="36"/>
+                                <rect key="frame" x="13" y="760" width="292" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="XEr-g9-Bdo"/>
                                     <constraint firstAttribute="width" constant="292" id="cx4-XS-Rwb"/>
@@ -249,7 +249,7 @@
                             <constraint firstItem="whh-YV-iH8" firstAttribute="top" secondItem="WqL-4z-CsM" secondAttribute="top" id="biO-WL-O3j"/>
                             <constraint firstItem="WqL-4z-CsM" firstAttribute="trailing" secondItem="77N-3W-873" secondAttribute="trailing" constant="16" id="dhR-BY-DV8"/>
                             <constraint firstItem="whh-YV-iH8" firstAttribute="leading" secondItem="WqL-4z-CsM" secondAttribute="leading" id="haI-Ls-6aH"/>
-                            <constraint firstAttribute="bottom" secondItem="3si-nK-P03" secondAttribute="bottom" constant="10" id="q3c-hO-k50"/>
+                            <constraint firstAttribute="bottom" secondItem="3si-nK-P03" secondAttribute="bottom" constant="20" id="q3c-hO-k50"/>
                             <constraint firstItem="whh-YV-iH8" firstAttribute="trailing" secondItem="WqL-4z-CsM" secondAttribute="trailing" id="suI-9c-W9N"/>
                             <constraint firstItem="3si-nK-P03" firstAttribute="leading" secondItem="WqL-4z-CsM" secondAttribute="leading" constant="13" id="tLL-x6-QfF"/>
                         </constraints>
