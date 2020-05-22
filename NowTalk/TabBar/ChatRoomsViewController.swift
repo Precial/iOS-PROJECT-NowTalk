@@ -14,6 +14,8 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
  
     var uid : String!
     var chatrooms : [ChatModel]! = []
+    var destinationUsers : [String] = []
+    
     
     @IBOutlet weak var tableview: UITableView!
     
@@ -98,6 +100,7 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
                    if(item.key != self.uid){
 
                        destinationUid = item.key
+                    destinationUsers.append(destinationUid!)
 
                    }
 
@@ -128,7 +131,9 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
                    let lastMessagekey = self.chatrooms[indexPath.row].comments.keys.sorted(){$0>$1}
 
                    cell.label_lastmessage.text = self.chatrooms[indexPath.row].comments[lastMessagekey[0]]?.message
-
+                   
+                let unixTime = self.chatrooms[indexPath.row].comments[lastMessagekey[0]]?.timestamp
+                cell.label_timestamp.text = unixTime?.toDayTime
                    
 
                })
@@ -144,6 +149,18 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
            }
 
         
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let destinationUid = self.destinationUsers[indexPath.row]
+        let view = self.storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
+        view.destinationUid = destinationUid
+        
+        self.navigationController?.pushViewController(view, animated: true)
+    }
+    
+    
         
     override func viewDidAppear(_ animated: Bool) {
         viewDidLoad()
@@ -190,5 +207,6 @@ class CustomCell: UITableViewCell {
     @IBOutlet weak var imageview: UIImageView!
     @IBOutlet weak var label_title: UILabel!
     @IBOutlet weak var label_lastmessage: UILabel!
+    @IBOutlet weak var label_timestamp: UILabel!
     
 }
