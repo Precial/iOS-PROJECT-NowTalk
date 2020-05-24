@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+        UINavigationBar.appearance().barTintColor = UIColor.white // 네이게이션 바 색상 섫정
+
+     
         FirebaseApp.configure()
         
         return true
