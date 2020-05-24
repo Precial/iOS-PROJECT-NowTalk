@@ -99,13 +99,15 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var selectFriendButton = Button()
         view.addSubview(selectFriendButton)
         selectFriendButton.snp.makeConstraints({ (m) in
-            m.bottom.equalTo(view).offset(-70)
+            m.bottom.equalTo(view).offset(-90)
             m.right.equalTo(view).offset(-20)
+            m.width.height.equalTo(50)
         })
         
         selectFriendButton.backgroundColor = UIColor.black
         selectFriendButton.addTarget(self, action: #selector(showSelectFriendController), for: .touchUpInside)
-
+        selectFriendButton.layer.cornerRadius = 25
+        selectFriendButton.layer.masksToBounds = true
         
 
         

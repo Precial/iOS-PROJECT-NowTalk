@@ -110,7 +110,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O5k-Cv-lLx">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="569"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelectFriendCell" rowHeight="70" id="xpH-Gf-N10" customClass="SelectFriendCell" customModule="NowTalk" customModuleProvider="target">
@@ -165,18 +165,26 @@
                                     <outlet property="delegate" destination="6d4-P0-l8G" id="e6W-pY-7Cd"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vt-Zf-jW1">
+                                <rect key="frame" x="146.66666666666666" y="685" width="82" height="30"/>
+                                <state key="normal" title="채팅방 만들기"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="O5k-Cv-lLx" firstAttribute="top" secondItem="7rY-Qp-WXl" secondAttribute="top" id="AHD-5u-njr"/>
+                            <constraint firstItem="9vt-Zf-jW1" firstAttribute="top" secondItem="O5k-Cv-lLx" secondAttribute="bottom" constant="28" id="Deo-9i-YJ9"/>
+                            <constraint firstItem="7rY-Qp-WXl" firstAttribute="bottom" secondItem="9vt-Zf-jW1" secondAttribute="bottom" constant="14" id="GDV-Y9-akf"/>
+                            <constraint firstItem="9vt-Zf-jW1" firstAttribute="centerX" secondItem="nsX-Il-noZ" secondAttribute="centerX" id="VjB-wd-TPM"/>
                             <constraint firstItem="O5k-Cv-lLx" firstAttribute="trailing" secondItem="7rY-Qp-WXl" secondAttribute="trailing" id="bEx-MC-b8i"/>
-                            <constraint firstItem="O5k-Cv-lLx" firstAttribute="bottom" secondItem="7rY-Qp-WXl" secondAttribute="bottom" id="g7N-LO-Yvg"/>
+                            <constraint firstItem="O5k-Cv-lLx" firstAttribute="bottom" secondItem="7rY-Qp-WXl" secondAttribute="bottom" constant="-72" id="g7N-LO-Yvg"/>
                             <constraint firstItem="O5k-Cv-lLx" firstAttribute="leading" secondItem="7rY-Qp-WXl" secondAttribute="leading" id="vBG-5H-Olp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7rY-Qp-WXl"/>
                     </view>
                     <navigationItem key="navigationItem" id="8ke-te-wqW"/>
                     <connections>
+                        <outlet property="button" destination="9vt-Zf-jW1" id="Y6T-iJ-US5"/>
                         <outlet property="tableview" destination="O5k-Cv-lLx" id="JLx-7k-2yd"/>
                     </connections>
                 </viewController>

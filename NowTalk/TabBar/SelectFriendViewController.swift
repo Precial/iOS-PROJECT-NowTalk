@@ -11,11 +11,16 @@ import Firebase
 import BEMCheckBox
 
 
-class SelectFriendViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+class SelectFriendViewController: UIViewController,UITableViewDelegate, UITableViewDataSource,BEMCheckBoxDelegate {
+    
+    
+    var user = Dictionary<String,Bool>()
     
     var array :  [UserModel] = []
 
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var button: UIButton!
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return array.count
@@ -28,7 +33,30 @@ class SelectFriendViewController: UIViewController,UITableViewDelegate, UITableV
         
         view.imageviewProfile.kf.setImage(with: URL(string:array[indexPath.row].profileImageUrl!))
         
+        view.checkbox.delegate = self
+        view.checkbox.tag = indexPath.row
+        
         return view
+    }
+    
+    func didTap(_ checkBox: BEMCheckBox) {
+        
+        if(checkBox.on) {
+            user[self.array[checkBox.tag].uid!] = true
+        } else {
+            user.removeValue(forKey: self.array[checkBox.tag].uid!)
+        }
+        
+    }
+    
+    @objc func createRoom() {
+        
+        var myUid = Auth.auth().currentUser?.uid
+        user[myUid!] = true
+        let nsDic = user as! NSDictionary
+        
+        Database.database().reference().child("chatrooms").childByAutoId().child("users").setValue(nsDic)
+        
     }
     
 
@@ -85,6 +113,7 @@ class SelectFriendViewController: UIViewController,UITableViewDelegate, UITableV
 
               })
 
+        button.addTarget(self, action: #selector(createRoom), for: .touchUpInside)
         // Do any additional setup after loading the view.
     }
     
