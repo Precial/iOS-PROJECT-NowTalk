@@ -106,6 +106,9 @@ class SignupViewController: UIViewController {
         //dismiss(animated: true, completion: nil)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+           self.view.endEditing(true)
+     }
     
     /* 회원가입 버튼 클릭 시 */
     @IBAction func createBtn(_ sender: Any) {
