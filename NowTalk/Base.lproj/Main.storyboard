@@ -915,7 +915,7 @@
         <scene sceneID="93d-Yc-k4K">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kHB-Su-cds" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="people" selectedImage="people" id="0zK-6l-Ryc"/>
+                    <tabBarItem key="tabBarItem" title="" image="user" selectedImage="user" id="0zK-6l-Ryc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SRy-oe-zm1">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -934,7 +934,7 @@
         <scene sceneID="4c5-Mc-FQQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nNr-hr-rbf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="chat" selectedImage="chat" id="Jo1-1O-zCb"/>
+                    <tabBarItem key="tabBarItem" title="" image="comment" selectedImage="comment" id="Jo1-1O-zCb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h6P-Jj-mg0">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -953,7 +953,7 @@
         <scene sceneID="Ml6-DM-QhK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BEz-OQ-tXi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="account" selectedImage="account" id="5vb-TR-pAa"/>
+                    <tabBarItem key="tabBarItem" title="" image="more" selectedImage="more" id="5vb-TR-pAa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YYx-ak-lTW">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -970,13 +970,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="account" width="64" height="64"/>
-        <image name="chat" width="64" height="64"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
         <image name="circle" catalog="system" width="128" height="121"/>
+        <image name="comment" width="32" height="32"/>
         <image name="logo_talk" width="564" height="564"/>
         <image name="message_blue" width="12" height="8"/>
         <image name="message_gray" width="12" height="8"/>
+        <image name="more" width="24" height="24"/>
         <image name="people" width="64" height="64"/>
+        <image name="user" width="32" height="32"/>
     </resources>
 </document>
