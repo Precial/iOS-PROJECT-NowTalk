@@ -17,6 +17,9 @@ pod 'Firebase/Auth'
 pod 'Firebase/Storage'
 pod 'ObjectMapper', '~>3.1'
 pod 'Kingfisher', '~> 5.0'
+pod 'BEMCheckBox'
+
+
 
 
 

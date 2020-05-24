@@ -95,7 +95,16 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         })
 
-            
+        
+        var selectFriendButton = Button()
+        view.addSubview(selectFriendButton)
+        selectFriendButton.snp.makeConstraints({ (m) in
+            m.bottom.equalTo(view).offset(-70)
+            m.right.equalTo(view).offset(-20)
+        })
+        
+        selectFriendButton.backgroundColor = UIColor.black
+        selectFriendButton.addTarget(self, action: #selector(showSelectFriendController), for: .touchUpInside)
 
         
 
@@ -106,7 +115,9 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
 
-
+    @objc func showSelectFriendController() {
+        self.performSegue(withIdentifier: "SelectFriendSegue", sender: nil)
+    }
     
 
     
