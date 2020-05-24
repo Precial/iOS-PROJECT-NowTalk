@@ -24,6 +24,7 @@
 		0B5CB9CD2477639000F834F7 /* ChatRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB9CC2477639000F834F7 /* ChatRoomsViewController.swift */; };
 		0B5CB9CF247791A300F834F7 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB9CE247791A300F834F7 /* AccountViewController.swift */; };
 		0BFBB311247A3AF800437527 /* SelectFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFBB310247A3AF800437527 /* SelectFriendViewController.swift */; };
+		0BFBB313247A5D9600437527 /* GroupChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFBB312247A5D9600437527 /* GroupChatRoomViewController.swift */; };
 		89104F2988EFE1916F023B0E /* Pods_NowTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FDEE3856B57A208657E2F35 /* Pods_NowTalk.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		0B5CB9CE247791A300F834F7 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		0BFBB30F247A382E00437527 /* BEMCheckBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BEMCheckBox.h; sourceTree = "<group>"; };
 		0BFBB310247A3AF800437527 /* SelectFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFriendViewController.swift; sourceTree = "<group>"; };
+		0BFBB312247A5D9600437527 /* GroupChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatRoomViewController.swift; sourceTree = "<group>"; };
 		6FDEE3856B57A208657E2F35 /* Pods_NowTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NowTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FFC682752CA9E2E1721147 /* Pods-NowTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NowTalk.release.xcconfig"; path = "Target Support Files/Pods-NowTalk/Pods-NowTalk.release.xcconfig"; sourceTree = "<group>"; };
 		ECC2375D189F8A2BB8E59FB8 /* Pods-NowTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NowTalk.debug.xcconfig"; path = "Target Support Files/Pods-NowTalk/Pods-NowTalk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				0B5CB9CC2477639000F834F7 /* ChatRoomsViewController.swift */,
 				0B5CB9CE247791A300F834F7 /* AccountViewController.swift */,
 				0BFBB310247A3AF800437527 /* SelectFriendViewController.swift */,
+				0BFBB312247A5D9600437527 /* GroupChatRoomViewController.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B5CB9972473B60700F834F7 /* LoginViewController.swift in Sources */,
+				0BFBB313247A5D9600437527 /* GroupChatRoomViewController.swift in Sources */,
 				0B5CB9CD2477639000F834F7 /* ChatRoomsViewController.swift in Sources */,
 				0B5CB9A3247549E600F834F7 /* PeopleViewController.swift in Sources */,
 				0B5CB9A52476066400F834F7 /* ChatViewController.swift in Sources */,
