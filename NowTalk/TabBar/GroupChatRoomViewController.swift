@@ -99,7 +99,7 @@ class GroupChatRoomViewController: UIViewController,UITableViewDelegate,UITableV
 
                         view.label_message.numberOfLines = 0;
 
-                        let imageUrl = destinationUser!["profileImagUrl"] as! String
+                        let imageUrl = destinationUser!["profileImageUrl"] as! String
 
                         let url = URL(string:(imageUrl))
                       
