@@ -25,7 +25,8 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
 
 
-
+    
+        
         tableview = UITableView()
 
         tableview.delegate = self

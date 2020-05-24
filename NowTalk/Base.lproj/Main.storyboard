@@ -219,7 +219,7 @@
             </objects>
             <point key="canvasLocation" x="3940" y="-561.57635467980299"/>
         </scene>
-        <!--People View Controller-->
+        <!--친구-->
         <scene sceneID="lbQ-f9-K4k">
             <objects>
                 <viewController storyboardIdentifier="PeopleViewController" id="ymQ-K3-PAG" customClass="PeopleViewController" customModule="NowTalk" customModuleProvider="target" sceneMemberID="viewController">
@@ -229,7 +229,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="IQP-ln-lsq"/>
                     </view>
-                    <navigationItem key="navigationItem" id="F1G-s3-Bxc"/>
+                    <navigationItem key="navigationItem" title="친구" id="F1G-s3-Bxc"/>
                     <connections>
                         <segue destination="6d4-P0-l8G" kind="show" identifier="SelectFriendSegue" id="9cv-fe-7YP"/>
                     </connections>
@@ -593,7 +593,7 @@
             </objects>
             <point key="canvasLocation" x="5493.6000000000004" y="108.62068965517241"/>
         </scene>
-        <!--Chat Rooms View Controller-->
+        <!--채팅-->
         <scene sceneID="Vxu-jw-Y11">
             <objects>
                 <viewController id="mma-cn-g0O" customClass="ChatRoomsViewController" customModule="NowTalk" customModuleProvider="target" sceneMemberID="viewController">
@@ -675,7 +675,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="hPK-nq-ZaY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="c3u-Os-yZU"/>
+                    <navigationItem key="navigationItem" title="채팅" id="c3u-Os-yZU"/>
                     <connections>
                         <outlet property="tableview" destination="lqu-qg-XfW" id="8DL-aY-IeL"/>
                     </connections>
@@ -684,7 +684,7 @@
             </objects>
             <point key="canvasLocation" x="2980" y="912.5615763546798"/>
         </scene>
-        <!--Account View Controller-->
+        <!--더보기-->
         <scene sceneID="D43-Xg-5qW">
             <objects>
                 <viewController id="Eba-RG-zDf" customClass="AccountViewController" customModule="NowTalk" customModuleProvider="target" sceneMemberID="viewController">
@@ -693,7 +693,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcH-x5-fuE">
-                                <rect key="frame" x="140" y="94" width="95" height="30"/>
+                                <rect key="frame" x="140" y="138" width="95" height="30"/>
                                 <state key="normal" title="상태메세지 입력"/>
                             </button>
                         </subviews>
@@ -704,14 +704,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Bs-mx-cq7"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="account" selectedImage="account" id="5vb-TR-pAa"/>
+                    <navigationItem key="navigationItem" title="더보기" id="Hoo-yh-6aR"/>
                     <connections>
                         <outlet property="conditionsCommentButton" destination="tcH-x5-fuE" id="L3x-2g-aHm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mxs-3Q-zL6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2038" y="1642"/>
+            <point key="canvasLocation" x="2980" y="1641.8719211822661"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="Fcl-ay-6X2">
@@ -904,7 +904,7 @@
                     <connections>
                         <segue destination="kHB-Su-cds" kind="relationship" relationship="viewControllers" id="0rf-83-2jv"/>
                         <segue destination="nNr-hr-rbf" kind="relationship" relationship="viewControllers" id="5ic-NJ-Xf8"/>
-                        <segue destination="Eba-RG-zDf" kind="relationship" relationship="viewControllers" id="7E7-hT-rFk"/>
+                        <segue destination="BEz-OQ-tXi" kind="relationship" relationship="viewControllers" id="7E7-hT-rFk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsm-sF-1Yx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -948,6 +948,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XO6-Me-SUD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2038" y="914"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ml6-DM-QhK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BEz-OQ-tXi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="account" selectedImage="account" id="5vb-TR-pAa"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YYx-ak-lTW">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Eba-RG-zDf" kind="relationship" relationship="rootViewController" id="FLB-gN-QgK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Eq-am-32f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2037.5999999999999" y="1641.8719211822661"/>
         </scene>
     </scenes>
     <resources>
