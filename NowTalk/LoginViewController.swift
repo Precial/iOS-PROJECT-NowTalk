@@ -44,7 +44,7 @@ class LoginViewController: UIViewController {
         color = remoteconfig["splash_background"].stringValue
        // statusBar.backgroundColor = UIColor(hex: color)
       //  loginButton.backgroundColor = UIColor(hex: color)
-        signIn.backgroundColor = UIColor(hex: color)
+     //   signIn.backgroundColor = UIColor(hex: color)
         
 
        /* Auth.auth().addStateDidChangeListener는 로그인 상태가 변할때 동작하는 부분 */
