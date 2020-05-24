@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         box.snp.makeConstraints { (make) in
             make.center.equalTo(self.view)
         }
-        box.image = #imageLiteral(resourceName: "logo")
+        box.image = #imageLiteral(resourceName: "logo_talk")
         // self.view.backgroundColor = UIColor(hex: "#000000") // 배경색 변경
     }
     

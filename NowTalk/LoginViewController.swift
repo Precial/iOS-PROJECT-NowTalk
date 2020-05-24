@@ -43,7 +43,7 @@ class LoginViewController: UIViewController {
        
         color = remoteconfig["splash_background"].stringValue
        // statusBar.backgroundColor = UIColor(hex: color)
-        loginButton.backgroundColor = UIColor(hex: color)
+      //  loginButton.backgroundColor = UIColor(hex: color)
         signIn.backgroundColor = UIColor(hex: color)
         
 

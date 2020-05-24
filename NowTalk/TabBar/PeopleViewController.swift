@@ -33,6 +33,8 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableview.dataSource = self
 
         tableview.register(PeopleViewTableCell.self, forCellReuseIdentifier: "Cell")
+        
+        tableview.separatorStyle = .none
 
         view.addSubview(tableview)
 
