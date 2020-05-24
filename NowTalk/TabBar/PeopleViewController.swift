@@ -104,7 +104,7 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
             m.width.height.equalTo(50)
         })
         
-        selectFriendButton.backgroundColor = UIColor.black
+        selectFriendButton.setBackgroundImage(UIImage(named: "account"), for: .normal)
         selectFriendButton.addTarget(self, action: #selector(showSelectFriendController), for: .touchUpInside)
         selectFriendButton.layer.cornerRadius = 25
         selectFriendButton.layer.masksToBounds = true
