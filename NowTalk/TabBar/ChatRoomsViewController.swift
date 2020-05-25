@@ -123,7 +123,7 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
                    userModel.setValuesForKeys(datasnapshot.value as! [String:AnyObject])
 
                  if(self.userCount[indexPath.row] > 2){
-                    cell.label_title.text = "단체 톡"
+                    cell.label_title.text = "단체 톡 (\(self.userCount[indexPath.row]))"
                 } else {
                      cell.label_title.text = userModel.userName
                 }
