@@ -35,8 +35,13 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
         }
 
         
-
-        func getChatroomsList(){
+    
+    
+    
+    
+    
+    
+    func getChatroomsList(){
 
             
             Database.database().reference().child("chatrooms").queryOrdered(byChild: "users/"+uid).queryEqual(toValue: true).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
@@ -60,7 +65,7 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
 
                     
                 }
-                   print("log[chat room 개수 값 확인]:\(self.chatrooms.count)")
+                //   print("log[chat room 개수 값 확인]:\(self.chatrooms.count)")
                 self.tableview.reloadData()
 
             })
@@ -93,11 +98,15 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
 
                        destinationUid = item.key
                     destinationUsers.append(destinationUid!)
+                    
+                  
 
                    }
 
                }
 
+       // print("log[destination 유저 수 확인:\(destinationUsers.count)]")
+        
                Database.database().reference().child("users").child(destinationUid!).observeSingleEvent(of: DataEventType.value, with: { (datasnapshot) in
 
                    
@@ -148,8 +157,11 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
         tableView.deselectRow(at: indexPath, animated: true)
         
         
+//        print("log[방에 유저 값 확인]:\(self.destinationUsers[indexPath.row])")
+//        print("log[방에 유저 수 확인]:\(self.destinationUsers.count)")
         
-        if(self.destinationUsers[indexPath.row].count > 2){
+        if(self.destinationUsers.count > 2){
+            print("log[일로 넘어가면안됨!!!!!!!!....]")
             let destinationUid = self.destinationUsers[indexPath.row]
                let view = self.storyboard?.instantiateViewController(withIdentifier: "GroupChatRoomViewController") as!
                 GroupChatRoomViewController
@@ -160,6 +172,7 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
             
             
         } else {
+            print("log[일로 넘어가야함....]")
             let destinationUid = self.destinationUsers[indexPath.row]
                let view = self.storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
                view.destinationUid = destinationUid
