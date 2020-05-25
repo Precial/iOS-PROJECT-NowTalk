@@ -19,6 +19,12 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     var userCount : [Int] = []
     
+    var userNameKey: [Dictionary<String, Bool>.Keys] = []
+    
+      var groupUserName : [String] = []
+    
+    
+    
     @IBOutlet weak var tableview: UITableView!
     
    override func viewDidLoad() {
@@ -26,7 +32,7 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
             super.viewDidLoad()
 
     self.destinationUsers.removeAll()
-
+   
             self.uid = Auth.auth().currentUser?.uid
 
             self.getChatroomsList()
@@ -60,12 +66,11 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
                         self.keys.append(item.key)
                         self.chatrooms.append(chatModel!)
                         self.userCount.append(chatModel!.users.count)
+                        self.userNameKey.append(chatModel!.users.keys)
                         
-                       // print("log: item \(item)")
-                       //print("log: item의 형태는 \(chatModel?.users.count)")
+                        print("log[특검 0] = \(chatModel!.users.keys)")
                         
-                       // print("log[채팅방 리스트 확인]:\(self.chatrooms.count)")
-                            
+                     
                     }
 
                     
@@ -91,7 +96,7 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
 
                let cell = tableView.dequeueReusableCell(withIdentifier: "RowCell", for:indexPath) as! CustomCell
 
-               
+      
 
                var destinationUid: String?
 
@@ -109,6 +114,44 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
                    }
 
                }
+        
+         //   print("log[특검]:\(self.userNameKey[indexPath.row])")
+        
+        if self.userCount[indexPath.row] > 2 {
+            
+            
+            print("log[특검]:\(self.userNameKey[indexPath.row])")
+//                             let userNameKey = chatModel!.users.keys
+//                             print("log[특검-1]: \(userNameKey)")
+//
+//
+                                 for i in self.userNameKey[indexPath.row] {
+                                    
+                                     print("log[특검-2]: \(i)")
+
+                                     Database.database().reference().child("users").child(i).observeSingleEvent(of: DataEventType.value, with: { (datasnapshot) in
+
+                                         let userModel = UserModel()
+
+                                         userModel.setValuesForKeys(datasnapshot.value as! [String:AnyObject])
+                                         print("log[특검 2-2 ]: \(userModel.userName!)")
+
+                                        self.groupUserName.append(userModel.userName!)
+                                     
+                                        
+
+                                     })
+
+
+                                 }
+            self.groupUserName.removeAll()
+                                    print("log[특검-3]: \(self.groupUserName)")
+                             }
+        
+        
+        
+        
+        
 
        // print("log[destination 유저 수 확인:\(destinationUsers.count)]")
         
@@ -123,8 +166,29 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
                    userModel.setValuesForKeys(datasnapshot.value as! [String:AnyObject])
 
                  if(self.userCount[indexPath.row] > 2){
-                    cell.label_title.text = "단체 톡 (\(self.userCount[indexPath.row]))"
-                 
+                  //  cell.label_title.text = "단체 톡 (\(self.userCount[indexPath.row]))"
+                    
+                    
+                    print("log[특검-4]: \(self.groupUserName)")
+                    
+                    let tempSort = self.groupUserName.sorted(by:<)
+                    
+                    var sumName = ""
+                    for ii in tempSort {
+                        print("log[특검 4-1]: \(ii)")
+                        sumName = sumName + ii + ","
+                    }
+                    
+                    sumName = String(sumName.dropLast(1))
+                     print("log[특검 4-2]: \(sumName)")
+                    
+                   
+                    
+             cell.label_title.text = "\(sumName) (\(self.userCount[indexPath.row]))"
+                    
+                
+                    
+                    
                                   cell.imageview.layer.cornerRadius = cell.imageview.frame.width/2
                                   cell.imageview.layer.masksToBounds = true
                     cell.imageView?.image = UIImage(named: "user")
@@ -155,11 +219,11 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
                 let unixTime = self.chatrooms[indexPath.row].comments[lastMessagekey[0]]?.timestamp
                 cell.label_timestamp.text = unixTime?.toDayTime
                    
-
+              
                })
 
-               
-
+   
+                
                return cell
 
                
@@ -205,6 +269,7 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
     
         
     override func viewDidAppear(_ animated: Bool) {
+        self.userNameKey.removeAll()
         viewDidLoad()
     }
     
@@ -214,13 +279,17 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
         override func didReceiveMemoryWarning() {
 
             super.didReceiveMemoryWarning()
-
+            
             // Dispose of any resources that can be recreated.
 
         }
 
         
-
+        override func viewWillAppear(_ animated: Bool) {
+            self.userNameKey.removeAll()
+                  viewDidLoad()
+    
+         }
         
 
         /*
