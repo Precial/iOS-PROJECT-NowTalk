@@ -17,6 +17,7 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
     var keys : [String] = []
     var destinationUsers : [String] = []
     
+    var userCount : [Int] = []
     
     @IBOutlet weak var tableview: UITableView!
     
@@ -58,7 +59,11 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
                         let chatModel = ChatModel(JSON: chatroomdic)
                         self.keys.append(item.key)
                         self.chatrooms.append(chatModel!)
-                       
+                        self.userCount.append(chatModel!.users.count)
+                        
+                       // print("log: item \(item)")
+                       //print("log: item의 형태는 \(chatModel?.users.count)")
+                        
                        // print("log[채팅방 리스트 확인]:\(self.chatrooms.count)")
                             
                     }
@@ -156,21 +161,21 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        print("log[추적 1]:\(destinationUsers)")
+            
+        print("log[추적 2 - 유저 개수 값은]:\(self.userCount[indexPath.row])")
         
-        print("log[방에 유저 값 확인]:\(self.destinationUsers[indexPath.row])")
-        print("log[방에 유저 수 확인]:\(self.destinationUsers.count)")
-        
-        if(self.destinationUsers.count > 2){
+        if(self.userCount[indexPath.row] > 2){
             print("log[일로 넘어가면안됨!!!!!!!!....]")
             let destinationUid = self.destinationUsers[indexPath.row]
                let view = self.storyboard?.instantiateViewController(withIdentifier: "GroupChatRoomViewController") as!
                 GroupChatRoomViewController
-               
+
             view.destinationRoom = self.keys[indexPath.row]
-            
+
                self.navigationController?.pushViewController(view, animated: true)
-            
-            
+
+
         } else {
             print("log[일로 넘어가야함....]")
             let destinationUid = self.destinationUsers[indexPath.row]

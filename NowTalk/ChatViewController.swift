@@ -275,9 +275,9 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                     if(chatModel?.users[self.destinationUid!] == true && chatModel?.users.count == 2) {
                         self.chatRoomUid = item.key
                         self.sendButton.isEnabled = true
-                        print("log[실행여부 확인]:")
+                       // print("log[실행여부 확인]:")
                      
-                        print("log[실행]: \(self.chatRoomUid!)")
+                       // print("log[실행]: \(self.chatRoomUid!)")
                  
                         self.getDestinationInfo()
 
@@ -363,7 +363,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
 
     func getMessageList(){
-           print("log[채팅룸 아디 값]: \(self.chatRoomUid!)")
+          // print("log[채팅룸 아디 값]: \(self.chatRoomUid!)")
         databaseRef = Database.database().reference().child("chatrooms").child(self.chatRoomUid!).child("comments")
         observe = databaseRef?.observe(DataEventType.value, with: {
             
