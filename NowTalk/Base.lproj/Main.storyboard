@@ -219,7 +219,7 @@
             </objects>
             <point key="canvasLocation" x="3940" y="-561.57635467980299"/>
         </scene>
-        <!--친구-->
+        <!--People View Controller-->
         <scene sceneID="lbQ-f9-K4k">
             <objects>
                 <viewController storyboardIdentifier="PeopleViewController" id="ymQ-K3-PAG" customClass="PeopleViewController" customModule="NowTalk" customModuleProvider="target" sceneMemberID="viewController">
@@ -227,9 +227,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                         <viewLayoutGuide key="safeArea" id="IQP-ln-lsq"/>
                     </view>
-                    <navigationItem key="navigationItem" title="친구" id="F1G-s3-Bxc"/>
+                    <navigationItem key="navigationItem" id="F1G-s3-Bxc">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="settings" id="r7O-ql-uVV">
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="followers-1" id="Mhw-WS-g2M">
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="search" id="ae2-4K-Kvq">
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <segue destination="6d4-P0-l8G" kind="show" identifier="SelectFriendSegue" id="9cv-fe-7YP"/>
                     </connections>
@@ -973,11 +986,14 @@
         <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
         <image name="circle" catalog="system" width="128" height="121"/>
         <image name="comment" width="32" height="32"/>
+        <image name="followers-1" width="24" height="24"/>
         <image name="logo_talk" width="564" height="564"/>
         <image name="message_blue" width="12" height="8"/>
         <image name="message_gray" width="12" height="8"/>
         <image name="more" width="24" height="24"/>
         <image name="people" width="64" height="64"/>
+        <image name="search" width="24" height="24"/>
+        <image name="settings" width="24" height="24"/>
         <image name="user" width="32" height="32"/>
     </resources>
 </document>

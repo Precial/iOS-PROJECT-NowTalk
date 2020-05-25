@@ -24,7 +24,18 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         super.viewDidLoad()
 
+     //   self.navigationController?.navigationBar.topItem?.title = "친구"
+     //self.navigationController?.navigationBar.topItem?.title = "Home"
+     let lbNavTitle = UILabel (frame: CGRect(x: 0, y: 0, width: 320, height: 40))
+  
+     lbNavTitle.textColor = UIColor.black
+     lbNavTitle.textAlignment = .left
+     lbNavTitle.font = .systemFont(ofSize: 22, weight: .semibold)
+     lbNavTitle.text = "친구"
 
+
+     self.navigationItem.titleView = lbNavTitle
+        
     
         
         tableview = UITableView()
