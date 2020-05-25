@@ -39,49 +39,38 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
         func getChatroomsList(){
 
             
-
             Database.database().reference().child("chatrooms").queryOrdered(byChild: "users/"+uid).queryEqual(toValue: true).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
-
+                self.chatrooms.removeAll()
                 
-
                 for item in datasnapshot.children.allObjects as! [DataSnapshot]{
 
-                    self.chatrooms.removeAll()
+                   // print("log[채팅방 리스트 확인]:\(item)")
+                    
+                   // self.chatrooms.removeAll()
 
                     if let chatroomdic = item.value as? [String:AnyObject]{
 
                         let chatModel = ChatModel(JSON: chatroomdic)
                         self.keys.append(item.key)
                         self.chatrooms.append(chatModel!)
-                        print("log[chat room 값 확인]:\(self.chatrooms)")
-                        print("log[chat room 개수 값 확인]:\(self.chatrooms.count)")
+                       
+                       // print("log[채팅방 리스트 확인]:\(self.chatrooms.count)")
                             
                     }
 
                     
-
                 }
-
+                   print("log[chat room 개수 값 확인]:\(self.chatrooms.count)")
                 self.tableview.reloadData()
 
-                
-
-                
-
             })
-
-            
-
-            
-
-            
-
+            self.chatrooms.removeAll()
         }
 
         
 
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-             print("log[채팅방 개수]:\(chatrooms.count)")
+            // print("log[채팅방 개수]:\(chatrooms.count)")
             return self.chatrooms.count
 
         }
