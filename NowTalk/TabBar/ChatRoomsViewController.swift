@@ -191,7 +191,7 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
                     
                                   cell.imageview.layer.cornerRadius = cell.imageview.frame.width/2
                                   cell.imageview.layer.masksToBounds = true
-                    cell.imageView?.image = UIImage(named: "user")
+                    //cell.imageView?.image = UIImage(named: "people") // 단체 톡방 이미지
                               
                 } else {
                      cell.label_title.text = userModel.userName

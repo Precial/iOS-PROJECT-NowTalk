@@ -196,8 +196,12 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if let comment = array[indexPath.row].comment {
             label_comment.text = comment
+            
         }
         
+        label_comment.textColor = .gray
+        label_comment.font = .systemFont(ofSize: 13, weight: .regular)
+      
         
         cell.uiview_comment_background.snp.makeConstraints { (m) in
             m.right.equalTo(cell).offset(-10)
@@ -209,7 +213,7 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
             m.height.equalTo(30)
         }
-        cell.uiview_comment_background.backgroundColor  = UIColor.lightGray
+       // cell.uiview_comment_background.backgroundColor  = UIColor.lightGray
         
         
         
