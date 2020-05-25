@@ -124,18 +124,23 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
 
                  if(self.userCount[indexPath.row] > 2){
                     cell.label_title.text = "단체 톡 (\(self.userCount[indexPath.row]))"
+                 
+                                  cell.imageview.layer.cornerRadius = cell.imageview.frame.width/2
+                                  cell.imageview.layer.masksToBounds = true
+                    cell.imageView?.image = UIImage(named: "user")
+                              
                 } else {
                      cell.label_title.text = userModel.userName
+                    let url = URL(string: userModel.profileImageUrl!)
+                                  cell.imageview.layer.cornerRadius = cell.imageview.frame.width/2
+                                  cell.imageview.layer.masksToBounds = true
+                                  cell.imageview.kf.setImage(with: url)
                 }
                     
                 
                   
 
-                   let url = URL(string: userModel.profileImageUrl!)
-                    cell.imageview.layer.cornerRadius = cell.imageview.frame.width/2
-                    cell.imageview.layer.masksToBounds = true
-                    cell.imageview.kf.setImage(with: url)
-                
+             
 
                 if(self.chatrooms[indexPath.row].comments.keys.count == 0) {
                     return
