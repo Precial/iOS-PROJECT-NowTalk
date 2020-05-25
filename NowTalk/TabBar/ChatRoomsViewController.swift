@@ -24,7 +24,7 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
 
             super.viewDidLoad()
 
-            
+    self.destinationUsers.removeAll()
 
             self.uid = Auth.auth().currentUser?.uid
 
@@ -157,8 +157,8 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
         tableView.deselectRow(at: indexPath, animated: true)
         
         
-//        print("log[방에 유저 값 확인]:\(self.destinationUsers[indexPath.row])")
-//        print("log[방에 유저 수 확인]:\(self.destinationUsers.count)")
+        print("log[방에 유저 값 확인]:\(self.destinationUsers[indexPath.row])")
+        print("log[방에 유저 수 확인]:\(self.destinationUsers.count)")
         
         if(self.destinationUsers.count > 2){
             print("log[일로 넘어가면안됨!!!!!!!!....]")
