@@ -49,7 +49,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         super.viewDidLoad()
 
         uid = Auth.auth().currentUser?.uid
-
+        
+      //  print("log[받은 로우 확인]:\(destinationUid)")
 
         checkChatRoom()
         self.tabBarController?.tabBar.isHidden  = true
@@ -99,7 +100,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        print("log[1]: \(comments.count)")
+    //    print("log[1]: \(comments.count)")
         
         return comments.count
         
@@ -270,9 +271,14 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 if let chatRoomdic = item.value as? [String:AnyObject] {
                     
                     let chatModel = ChatModel(JSON: chatRoomdic)
+               
                     if(chatModel?.users[self.destinationUid!] == true && chatModel?.users.count == 2) {
                         self.chatRoomUid = item.key
                         self.sendButton.isEnabled = true
+                        print("log[실행여부 확인]:")
+                     
+                        print("log[실행]: \(self.chatRoomUid!)")
+                 
                         self.getDestinationInfo()
 
                     }
@@ -281,8 +287,9 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 
                 
 
-                self.chatRoomUid = item.key
-
+              //  self.chatRoomUid = item.key
+     
+              //  print("log[접속되는 방 확인]:\(self.chatRoomUid)")
             }
 
         })
@@ -290,7 +297,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     
      func getDestinationInfo(){
-      
+      //  print("log[리스트 정보 뭐 되는지]:\(self.destinationUid)")
         Database.database().reference().child("users").child(self.destinationUid!).observeSingleEvent(of: DataEventType.value, with: {
             (dataSnapshot) in
             self.userModel = UserModel()
@@ -356,7 +363,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
 
     func getMessageList(){
-
+           print("log[채팅룸 아디 값]: \(self.chatRoomUid!)")
         databaseRef = Database.database().reference().child("chatrooms").child(self.chatRoomUid!).child("comments")
         observe = databaseRef?.observe(DataEventType.value, with: {
             
@@ -408,6 +415,10 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
             }
         }
+            
+          //  print("log[함수 끝 확인]")
+            
+            
             
      }
 

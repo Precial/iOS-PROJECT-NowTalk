@@ -37,6 +37,7 @@ class GroupChatRoomViewController: UIViewController,UITableViewDelegate,UITableV
            // print("log:[현재 유저 수는]\(dic.count)")
             
         })
+   
 
         button_send.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         // Do any additional setup after loading the view.
@@ -63,6 +64,8 @@ class GroupChatRoomViewController: UIViewController,UITableViewDelegate,UITableV
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+       
         return comments.count
     }
     

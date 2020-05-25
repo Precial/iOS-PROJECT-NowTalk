@@ -53,7 +53,9 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
                         let chatModel = ChatModel(JSON: chatroomdic)
                         self.keys.append(item.key)
                         self.chatrooms.append(chatModel!)
-
+                        print("log[chat room 값 확인]:\(self.chatrooms)")
+                        print("log[chat room 개수 값 확인]:\(self.chatrooms.count)")
+                            
                     }
 
                     
@@ -79,7 +81,7 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
         
 
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+             print("log[채팅방 개수]:\(chatrooms.count)")
             return self.chatrooms.count
 
         }
@@ -122,7 +124,7 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
                    let url = URL(string: userModel.profileImageUrl!)
                     cell.imageview.layer.cornerRadius = cell.imageview.frame.width/2
                     cell.imageview.layer.masksToBounds = true
-                cell.imageview.kf.setImage(with: url)
+                    cell.imageview.kf.setImage(with: url)
                 
 
                 if(self.chatrooms[indexPath.row].comments.keys.count == 0) {

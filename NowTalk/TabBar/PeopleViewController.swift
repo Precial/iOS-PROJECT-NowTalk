@@ -227,9 +227,11 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        print("log[선택한 로우 확인]:\(indexPath.row)")
+        
         let view  = self.storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as? ChatViewController
         view?.destinationUid = self.array[indexPath.row].uid
-        
+        print("log[보내는 로우 확인]:\(self.array[indexPath.row].uid)")
         self.navigationController?.pushViewController(view!, animated: true)
         
     }
@@ -237,11 +239,17 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func didReceiveMemoryWarning() {
 
         super.didReceiveMemoryWarning()
+      
 
         // Dispose of any resources that can be recreated.
 
     }
+    override func viewDidAppear(_ animated: Bool) {
+          //  print("log[되돌아오기 확인]")
+        print("log------------------------------------------")
 
+           viewDidLoad()
+       }
     
 
 
