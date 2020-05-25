@@ -115,14 +115,21 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
                Database.database().reference().child("users").child(destinationUid!).observeSingleEvent(of: DataEventType.value, with: { (datasnapshot) in
 
                    
-
+                    
+                
+                
                    let userModel = UserModel()
 
                    userModel.setValuesForKeys(datasnapshot.value as! [String:AnyObject])
 
-                   
-
-                   cell.label_title.text = userModel.userName
+                 if(self.userCount[indexPath.row] > 2){
+                    cell.label_title.text = "단체 톡"
+                } else {
+                     cell.label_title.text = userModel.userName
+                }
+                    
+                
+                  
 
                    let url = URL(string: userModel.profileImageUrl!)
                     cell.imageview.layer.cornerRadius = cell.imageview.frame.width/2
