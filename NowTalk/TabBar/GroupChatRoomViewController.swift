@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Kingfisher
 
 
 class GroupChatRoomViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
@@ -25,11 +26,15 @@ class GroupChatRoomViewController: UIViewController,UITableViewDelegate,UITableV
     var destinationRoom : String?
     var uid : String?
     
+    
+ 
+    
     var databaseRef : DatabaseReference?
     var observe : UInt?
     var comments : [ChatModel.Comment] = []
     var users : [String:AnyObject]?
     
+      var peopleCount : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -131,7 +136,7 @@ class GroupChatRoomViewController: UIViewController,UITableViewDelegate,UITableV
                       }
 
                       
-                      //setReadCount(label: view.label_read_counter, position: indexPath.row)
+                      setReadCount(label: view.label_read_counter, position: indexPath.row)
                       
                         return view
 
@@ -165,7 +170,7 @@ class GroupChatRoomViewController: UIViewController,UITableViewDelegate,UITableV
 
                       }
 
-                   //  setReadCount(label: view.label_read_counter, position: indexPath.row)
+                     setReadCount(label: view.label_read_counter, position: indexPath.row)
 
                         return view
               
@@ -175,8 +180,49 @@ class GroupChatRoomViewController: UIViewController,UITableViewDelegate,UITableV
     }
     
     
+    func setReadCount(label:UILabel?, position: Int?){
+        let readCount = self.comments[position!].readUsers.count
+        
+            if(peopleCount == nil) {
+                
+                Database.database().reference().child("chatrooms").child(destinationRoom!).child("users").observeSingleEvent(of: DataEventType.value, with: {
+                          (datasnapshot) in
+                          
+                          let dic = datasnapshot.value as! [String:Any]
+                          
+                          self.peopleCount = dic.count
+                          
+                          let noReadCount = self.peopleCount! - readCount
+                          
+                          
+                          if(noReadCount > 0) {
+                              label?.isHidden = false
+                              label?.text = String(noReadCount)
+                          } else{
+                              label?.isHidden = true
+                          }
+                          
+                      })
+                
+                
+        } else{
+            
+            let noReadCount = self.peopleCount! - readCount
+                       
+                       
+                       if(noReadCount > 0) {
+                           label?.isHidden = false
+                           label?.text = String(noReadCount)
+                       } else{
+                           label?.isHidden = true
+                       }
+        }
+        
+        
+        
+        
     
-    
+    }
     
     
     
