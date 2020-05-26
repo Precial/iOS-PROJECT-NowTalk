@@ -79,7 +79,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="D8a-gp-sbN" kind="modal" modalPresentationStyle="fullScreen" id="l2l-AF-q9K"/>
+                                    <segue destination="WIX-8V-jKw" kind="modal" modalPresentationStyle="fullScreen" id="l2l-AF-q9K"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GkI-aW-6jS">
@@ -100,7 +100,7 @@
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="J2g-d7-noB" kind="presentation" modalPresentationStyle="overFullScreen" id="6Hm-NZ-gPb"/>
+                                    <segue destination="J2g-d7-noB" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="6Hm-NZ-gPb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBw-Zm-xtg">
@@ -543,7 +543,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tmK-wz-lVt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2980" y="912.5615763546798"/>
+            <point key="canvasLocation" x="3922.4000000000001" y="912.5615763546798"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="D43-Xg-5qW">
@@ -613,6 +613,9 @@
                                 <state key="normal" title="내용보기">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="agreeContent1:" destination="D8a-gp-sbN" eventType="touchUpInside" id="UpS-zo-wmr"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="회원가입" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6V-yN-4pU">
                                 <rect key="frame" x="121" y="57" width="129" height="30"/>
@@ -638,6 +641,9 @@
                                 <state key="normal" title="내용보기">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="agreeContent2:" destination="D8a-gp-sbN" eventType="touchUpInside" id="U1y-pC-40H"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nz-Eo-aj9">
                                 <rect key="frame" x="0.0" y="820" width="414" height="76"/>
@@ -671,6 +677,9 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
                                 </state>
                                 <state key="selected" image="checkmark.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="agreeCheckBtn:" destination="D8a-gp-sbN" eventType="touchUpInside" id="MLZ-XF-36B"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3y-3d-DJB">
                                 <rect key="frame" x="12" y="608" width="35" height="35"/>
@@ -680,6 +689,9 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
                                 </state>
                                 <state key="selected" image="checkmark.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="agreeCheckBtn2:" destination="D8a-gp-sbN" eventType="touchUpInside" id="8cv-H9-sHS"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4kZ-eD-zxx" customClass="HoshiTextField" customModule="TextFieldEffects">
                                 <rect key="frame" x="50" y="284" width="275" height="40"/>
@@ -754,6 +766,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="2r0-aj-3fH"/>
                     <connections>
+                        <outlet property="agreeCheckButton" destination="UJC-Iw-j0u" id="p6U-eG-yEU"/>
+                        <outlet property="agreeCheckButton2" destination="p3y-3d-DJB" id="Vm9-vD-1nv"/>
                         <outlet property="email" destination="4kZ-eD-zxx" id="2PB-dz-eFT"/>
                         <outlet property="imageView" destination="Vc3-K7-sGQ" id="Hl0-ha-mLs"/>
                         <outlet property="name" destination="fo7-Pk-q6v" id="I0E-dp-c1X"/>
@@ -762,7 +776,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wPM-hH-QOP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1150" y="932"/>
+            <point key="canvasLocation" x="1150" y="1680"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="TEx-4i-pOA">
@@ -826,7 +840,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XO6-Me-SUD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2038" y="914"/>
+            <point key="canvasLocation" x="2980" y="913.30049261083752"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ml6-DM-QhK">
@@ -1129,7 +1143,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKY-lZ-Mih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1126" y="1646"/>
+            <point key="canvasLocation" x="209" y="833"/>
+        </scene>
+        <!--Agree View Controller-->
+        <scene sceneID="q4i-rD-KAZ">
+            <objects>
+                <viewController storyboardIdentifier="showAgree" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QBR-cx-Azp" customClass="AgreeViewController" customModule="NowTalk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6f0-4C-oyZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="aga-ke-fDG"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LCh-EG-aqz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wah-IU-guQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="345" y="1671"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="N9D-Ep-JP6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WIX-8V-jKw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AQf-4i-ltC">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="D8a-gp-sbN" kind="relationship" relationship="rootViewController" id="5dm-4g-bpJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jsu-Id-cD4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1149.5999999999999" y="931.77339901477842"/>
         </scene>
     </scenes>
     <resources>

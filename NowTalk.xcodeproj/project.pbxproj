@@ -24,6 +24,7 @@
 		0B5CB9CD2477639000F834F7 /* ChatRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB9CC2477639000F834F7 /* ChatRoomsViewController.swift */; };
 		0B5CB9CF247791A300F834F7 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB9CE247791A300F834F7 /* AccountViewController.swift */; };
 		0B6FBCCC247CE4060026A380 /* PwResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6FBCCB247CE4060026A380 /* PwResetViewController.swift */; };
+		0B6FBCD0247CF6990026A380 /* AgreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6FBCCF247CF6990026A380 /* AgreeViewController.swift */; };
 		0BFBB311247A3AF800437527 /* SelectFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFBB310247A3AF800437527 /* SelectFriendViewController.swift */; };
 		0BFBB313247A5D9600437527 /* GroupChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFBB312247A5D9600437527 /* GroupChatRoomViewController.swift */; };
 		89104F2988EFE1916F023B0E /* Pods_NowTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FDEE3856B57A208657E2F35 /* Pods_NowTalk.framework */; };
@@ -49,6 +50,7 @@
 		0B5CB9CC2477639000F834F7 /* ChatRoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomsViewController.swift; sourceTree = "<group>"; };
 		0B5CB9CE247791A300F834F7 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		0B6FBCCB247CE4060026A380 /* PwResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwResetViewController.swift; sourceTree = "<group>"; };
+		0B6FBCCF247CF6990026A380 /* AgreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeViewController.swift; sourceTree = "<group>"; };
 		0BFBB30F247A382E00437527 /* BEMCheckBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BEMCheckBox.h; sourceTree = "<group>"; };
 		0BFBB310247A3AF800437527 /* SelectFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFriendViewController.swift; sourceTree = "<group>"; };
 		0BFBB312247A5D9600437527 /* GroupChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatRoomViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				0B6FBCCB247CE4060026A380 /* PwResetViewController.swift */,
 				0B5CB98024739F3C00F834F7 /* SceneDelegate.swift */,
 				0B5CB98224739F3C00F834F7 /* ViewController.swift */,
+				0B6FBCCF247CF6990026A380 /* AgreeViewController.swift */,
 				0B5CB9962473B60700F834F7 /* LoginViewController.swift */,
 				0B5CB9942473ABAD00F834F7 /* RemoteConfigDefaults.plist */,
 				0B5CB98424739F3C00F834F7 /* Main.storyboard */,
@@ -279,6 +282,7 @@
 				0B5CB98124739F3C00F834F7 /* SceneDelegate.swift in Sources */,
 				0B5CB9A82476074900F834F7 /* ChatModel.swift in Sources */,
 				0B5CB9CF247791A300F834F7 /* AccountViewController.swift in Sources */,
+				0B6FBCD0247CF6990026A380 /* AgreeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

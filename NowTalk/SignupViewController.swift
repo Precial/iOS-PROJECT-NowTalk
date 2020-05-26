@@ -20,6 +20,13 @@ class SignupViewController: UIViewController {
   
     @IBOutlet weak var imageView: UIImageView!
     
+    /* 이용 약관 체크 변수*/
+    var agreeNextCode = 0
+    
+    /* 이용약관 체크버튼 */
+       @IBOutlet weak var agreeCheckButton: UIButton!
+       @IBOutlet weak var agreeCheckButton2:  UIButton!
+    
     
     var imgdownloadURL = ""
     
@@ -30,9 +37,13 @@ class SignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+         navigationController?.navigationBar.isHidden = true
         picker.delegate = self
 
+    }
+    
+       override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true // 다시 초기화면으로 돌아 왔을때 네이게이션 바 제거
     }
     
     
@@ -105,6 +116,39 @@ class SignupViewController: UIViewController {
         
         //dismiss(animated: true, completion: nil)
     }
+    
+    
+    /* 약관 동의 버튼 클릭시 동작하는 부분 */
+    @IBAction func agreeCheckBtn(_ sender: Any) {
+        agreeCheckButton.isSelected = !agreeCheckButton.isSelected // 클릭할때 마다 상태 값 변화
+    }
+    @IBAction func agreeCheckBtn2(_ sender: Any) {
+          agreeCheckButton2.isSelected = !agreeCheckButton2.isSelected // 클릭할때 마다 상태 값 변화
+    }
+    
+    
+    @IBAction func agreeContent1(_ sender: Any) {
+        agreeNextCode=0
+      
+        agreePageNext()
+ 
+    }
+    @IBAction func agreeContent2(_ sender: Any) {
+        agreeNextCode=1
+             
+        agreePageNext()
+    }
+    
+    func agreePageNext(){
+               print("log:[특검]")
+         guard let rvc = self.storyboard?.instantiateViewController(withIdentifier:"showAgree") as? AgreeViewController else {
+             return
+         }
+        // rvc.receiveCode = self.agreeNextCode // 약관동의 페이지의 사용자가 누른 약관동의 코드를 전송
+         self.navigationController?.pushViewController(rvc, animated: true) // 약관내용보기로 이동
+     }
+    
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
            self.view.endEditing(true)
