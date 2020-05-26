@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // try! Auth.auth().signOut()
+         try! Auth.auth().signOut()
         
         // 버튼 및 텍스트 필드 라이브러리에서 가져오기
         let statusBar = UIView()

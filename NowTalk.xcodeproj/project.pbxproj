@@ -23,6 +23,7 @@
 		0B5CB9CA24775F8300F834F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B5CB9C924775F8200F834F7 /* GoogleService-Info.plist */; };
 		0B5CB9CD2477639000F834F7 /* ChatRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB9CC2477639000F834F7 /* ChatRoomsViewController.swift */; };
 		0B5CB9CF247791A300F834F7 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB9CE247791A300F834F7 /* AccountViewController.swift */; };
+		0B6FBCCC247CE4060026A380 /* PwResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6FBCCB247CE4060026A380 /* PwResetViewController.swift */; };
 		0BFBB311247A3AF800437527 /* SelectFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFBB310247A3AF800437527 /* SelectFriendViewController.swift */; };
 		0BFBB313247A5D9600437527 /* GroupChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFBB312247A5D9600437527 /* GroupChatRoomViewController.swift */; };
 		89104F2988EFE1916F023B0E /* Pods_NowTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FDEE3856B57A208657E2F35 /* Pods_NowTalk.framework */; };
@@ -47,6 +48,7 @@
 		0B5CB9C924775F8200F834F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0B5CB9CC2477639000F834F7 /* ChatRoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomsViewController.swift; sourceTree = "<group>"; };
 		0B5CB9CE247791A300F834F7 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		0B6FBCCB247CE4060026A380 /* PwResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwResetViewController.swift; sourceTree = "<group>"; };
 		0BFBB30F247A382E00437527 /* BEMCheckBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BEMCheckBox.h; sourceTree = "<group>"; };
 		0BFBB310247A3AF800437527 /* SelectFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFriendViewController.swift; sourceTree = "<group>"; };
 		0BFBB312247A5D9600437527 /* GroupChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatRoomViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				0B5CB9CB2477636400F834F7 /* TabBar */,
 				0B5CB9A62476071E00F834F7 /* Model */,
 				0B5CB97E24739F3C00F834F7 /* AppDelegate.swift */,
+				0B6FBCCB247CE4060026A380 /* PwResetViewController.swift */,
 				0B5CB98024739F3C00F834F7 /* SceneDelegate.swift */,
 				0B5CB98224739F3C00F834F7 /* ViewController.swift */,
 				0B5CB9962473B60700F834F7 /* LoginViewController.swift */,
@@ -271,6 +274,7 @@
 				0B5CB99D2474F8DF00F834F7 /* UserModel.swift in Sources */,
 				0B5CB98324739F3C00F834F7 /* ViewController.swift in Sources */,
 				0B5CB9992474ACCA00F834F7 /* SignupViewController.swift in Sources */,
+				0B6FBCCC247CE4060026A380 /* PwResetViewController.swift in Sources */,
 				0B5CB97F24739F3C00F834F7 /* AppDelegate.swift in Sources */,
 				0B5CB98124739F3C00F834F7 /* SceneDelegate.swift in Sources */,
 				0B5CB9A82476074900F834F7 /* ChatModel.swift in Sources */,
