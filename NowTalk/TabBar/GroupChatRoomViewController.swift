@@ -39,6 +39,13 @@ class GroupChatRoomViewController: UIViewController,UITableViewDelegate,UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden  = true
+        
+   
+        
+        
+        
+        
+        
         uid = Auth.auth().currentUser?.uid
         
         Database.database().reference().child("users").observeSingleEvent(of: DataEventType.value, with: {(datansnapshot) in

@@ -439,7 +439,7 @@
             </objects>
             <point key="canvasLocation" x="4725.6000000000004" y="114.53201970443351"/>
         </scene>
-        <!--채팅-->
+        <!--Chat Rooms View Controller-->
         <scene sceneID="Vxu-jw-Y11">
             <objects>
                 <viewController id="mma-cn-g0O" customClass="ChatRoomsViewController" customModule="NowTalk" customModuleProvider="target" sceneMemberID="viewController">
@@ -521,7 +521,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="hPK-nq-ZaY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="채팅" id="c3u-Os-yZU"/>
+                    <navigationItem key="navigationItem" id="c3u-Os-yZU">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="settings" id="3cZ-f9-gBi">
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="followers-1" id="zu8-n6-57v">
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="search" id="lnC-AQ-TSj">
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableview" destination="lqu-qg-XfW" id="8DL-aY-IeL"/>
                     </connections>
@@ -530,7 +542,7 @@
             </objects>
             <point key="canvasLocation" x="2980" y="912.5615763546798"/>
         </scene>
-        <!--더보기-->
+        <!--Account View Controller-->
         <scene sceneID="D43-Xg-5qW">
             <objects>
                 <viewController id="Eba-RG-zDf" customClass="AccountViewController" customModule="NowTalk" customModuleProvider="target" sceneMemberID="viewController">
@@ -550,7 +562,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Bs-mx-cq7"/>
                     </view>
-                    <navigationItem key="navigationItem" title="더보기" id="Hoo-yh-6aR"/>
+                    <navigationItem key="navigationItem" id="Hoo-yh-6aR">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="settings" id="JYg-wm-Nwt">
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="followers-1" id="mFg-is-sZ8">
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="search" id="bLv-r2-1P7">
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="conditionsCommentButton" destination="tcH-x5-fuE" id="L3x-2g-aHm"/>
                     </connections>

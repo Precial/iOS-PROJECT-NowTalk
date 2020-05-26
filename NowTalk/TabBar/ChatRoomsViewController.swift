@@ -30,6 +30,16 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
    override func viewDidLoad() {
 
             super.viewDidLoad()
+    
+    let lbNavTitle = UILabel (frame: CGRect(x: 0, y: 0, width: 320, height: 40))
+    
+       lbNavTitle.textColor = UIColor.black
+       lbNavTitle.textAlignment = .left
+       lbNavTitle.font = .systemFont(ofSize: 22, weight: .semibold)
+       lbNavTitle.text = " 채팅"
+
+
+       self.navigationItem.titleView = lbNavTitle
 
     self.destinationUsers.removeAll()
    

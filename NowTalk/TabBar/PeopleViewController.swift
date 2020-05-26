@@ -31,7 +31,7 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
      lbNavTitle.textColor = UIColor.black
      lbNavTitle.textAlignment = .left
      lbNavTitle.font = .systemFont(ofSize: 22, weight: .semibold)
-     lbNavTitle.text = "친구"
+     lbNavTitle.text = "  친구"
 
 
      self.navigationItem.titleView = lbNavTitle

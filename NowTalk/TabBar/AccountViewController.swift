@@ -17,6 +17,17 @@ class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+           let lbNavTitle = UILabel (frame: CGRect(x: 0, y: 0, width: 320, height: 40))
+        
+           lbNavTitle.textColor = UIColor.black
+           lbNavTitle.textAlignment = .left
+           lbNavTitle.font = .systemFont(ofSize: 22, weight: .semibold)
+           lbNavTitle.text = "  더보기"
+
+
+           self.navigationItem.titleView = lbNavTitle
 
         
         conditionsCommentButton.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
