@@ -12,6 +12,10 @@ import Firebase
 
 class GroupChatRoomViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
+    @IBOutlet weak var bottomContraint: NSLayoutConstraint!
+       
+       @IBOutlet weak var bottomLayout: NSLayoutConstraint!
+    
     
     @IBOutlet weak var button_send: UIButton!
     @IBOutlet weak var textfiled_message: UITextField!
@@ -70,22 +74,7 @@ class GroupChatRoomViewController: UIViewController,UITableViewDelegate,UITableV
     }
     
     
-    @objc private func adjustInputView(noti: Notification) {
-          guard let userInfo = noti.userInfo else { return }
-          // [x] TODO: 키보드 높이에 따른 인풋뷰 위치 변경
-          guard let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
-          
-          if noti.name == UIResponder.keyboardWillShowNotification {
-              let adjustmentHeight = keyboardFrame.height - view.safeAreaInsets.bottom + 40
-         //     bottomLayout.constant = adjustmentHeight
-              print("log:[키보드 사이즈 확인]: \(adjustmentHeight)")
-          } else {
-       //      bottomLayout.constant = 20
-        //      bottomContraint.constant = -15
-          }
-          
-          print("---> Keyboard End Frame: \(keyboardFrame)")
-      }
+
     
     
     
@@ -252,14 +241,23 @@ class GroupChatRoomViewController: UIViewController,UITableViewDelegate,UITableV
     
 
     
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension GroupChatRoomViewController {
+    @objc private func adjustInputView(noti: Notification) {
+        guard let userInfo = noti.userInfo else { return }
+        // [x] TODO: 키보드 높이에 따른 인풋뷰 위치 변경
+        guard let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        
+        if noti.name == UIResponder.keyboardWillShowNotification {
+            let adjustmentHeight = keyboardFrame.height - view.safeAreaInsets.bottom + 40
+            bottomLayout.constant = adjustmentHeight
+            print("log:[키보드 사이즈 확인]: \(adjustmentHeight)")
+        } else {
+           bottomLayout.constant = 20
+            bottomContraint.constant = -15
+        }
+        
+        print("---> Keyboard End Frame: \(keyboardFrame)")
     }
-    */
-
 }
