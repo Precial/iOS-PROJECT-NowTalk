@@ -140,7 +140,7 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="569"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelectFriendCell" rowHeight="70" id="xpH-Gf-N10" customClass="SelectFriendCell" customModule="NowTalk" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SelectFriendCell" rowHeight="70" id="xpH-Gf-N10" customClass="SelectFriendCell" customModule="NowTalk" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xpH-Gf-N10" id="X7W-JR-OLO">
@@ -452,7 +452,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RowCell" rowHeight="70" id="FTA-Nw-UxF" customClass="CustomCell" customModule="NowTalk" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RowCell" rowHeight="70" id="FTA-Nw-UxF" customClass="CustomCell" customModule="NowTalk" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FTA-Nw-UxF" id="UdG-D4-ofs">
@@ -785,7 +785,9 @@
         <scene sceneID="93d-Yc-k4K">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kHB-Su-cds" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="user" selectedImage="user" id="0zK-6l-Ryc"/>
+                    <tabBarItem key="tabBarItem" title="" image="user" selectedImage="user" id="0zK-6l-Ryc">
+                        <color key="badgeColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SRy-oe-zm1">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -804,7 +806,9 @@
         <scene sceneID="4c5-Mc-FQQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nNr-hr-rbf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="comment" selectedImage="comment" id="Jo1-1O-zCb"/>
+                    <tabBarItem key="tabBarItem" title="" image="comment" selectedImage="comment" id="Jo1-1O-zCb">
+                        <color key="badgeColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h6P-Jj-mg0">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -823,7 +827,9 @@
         <scene sceneID="Ml6-DM-QhK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BEz-OQ-tXi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="more" selectedImage="more" id="5vb-TR-pAa"/>
+                    <tabBarItem key="tabBarItem" title="" image="more" selectedImage="more" id="5vb-TR-pAa">
+                        <color key="badgeColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YYx-ak-lTW">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>

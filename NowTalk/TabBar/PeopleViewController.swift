@@ -214,6 +214,8 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
         label_comment.font = .systemFont(ofSize: 13, weight: .regular)
       
         
+        cell.selectionStyle = .none
+        
         cell.uiview_comment_background.snp.makeConstraints { (m) in
             m.right.equalTo(cell).offset(-10)
             m.centerY.equalTo(cell)
