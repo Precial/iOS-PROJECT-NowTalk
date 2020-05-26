@@ -581,7 +581,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mxs-3Q-zL6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2980" y="1641.8719211822661"/>
+            <point key="canvasLocation" x="2980" y="2337"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="Fcl-ay-6X2">
@@ -770,10 +770,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" cocoaTouchSystemColor="darkTextColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="kHB-Su-cds" kind="relationship" relationship="viewControllers" id="0rf-83-2jv"/>
                         <segue destination="nNr-hr-rbf" kind="relationship" relationship="viewControllers" id="5ic-NJ-Xf8"/>
+                        <segue destination="zf8-kq-lwL" kind="relationship" relationship="viewControllers" id="D8I-yR-RJO"/>
                         <segue destination="BEz-OQ-tXi" kind="relationship" relationship="viewControllers" id="7E7-hT-rFk"/>
                     </connections>
                 </tabBarController>
@@ -842,7 +844,34 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Eq-am-32f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2037.5999999999999" y="1641.8719211822661"/>
+            <point key="canvasLocation" x="2038" y="2337"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tsS-Rh-Zl4">
+            <objects>
+                <viewController id="zf8-kq-lwL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yJQ-9m-WH5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="준비중" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iti-EE-1kI">
+                                <rect key="frame" x="166" y="396" width="45" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ri2-85-hUW"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="hashtag" id="FJI-Iz-VrL">
+                        <color key="badgeColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xhe-gc-of0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2980" y="1646"/>
         </scene>
         <!--Group Chat Room View Controller-->
         <scene sceneID="irg-kG-BFd">
@@ -1035,6 +1064,7 @@
         <image name="circle" catalog="system" width="128" height="121"/>
         <image name="comment" width="32" height="32"/>
         <image name="followers-1" width="24" height="24"/>
+        <image name="hashtag" width="24" height="24"/>
         <image name="logo_talk" width="564" height="564"/>
         <image name="message_blue" width="12" height="8"/>
         <image name="message_gray" width="12" height="8"/>
