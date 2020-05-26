@@ -29,7 +29,7 @@ class GroupChatRoomViewController: UIViewController,UITableViewDelegate,UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tabBarController?.tabBar.isHidden  = true
         uid = Auth.auth().currentUser?.uid
         
         Database.database().reference().child("users").observeSingleEvent(of: DataEventType.value, with: {(datansnapshot) in
@@ -43,7 +43,56 @@ class GroupChatRoomViewController: UIViewController,UITableViewDelegate,UITableV
         // Do any additional setup after loading the view.
         
         getMessageList()
+        
+        
+        
+        // [x] TODO: 키보드 디텍션
+                  NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillShowNotification, object: nil)
+                  NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+         NotificationCenter.default.removeObserver(self)
+         self.tabBarController?.tabBar.isHidden = false
+         
+         
+       //  databaseRef?.removeObserver(withHandle: observe!)
+     }
+     
+    @objc func dismissKeyboard(){
+           self.view.endEditing(true)
+       }
+    
+    /* 키보드창 내리기 */
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+          self.view.endEditing(true)
+    }
+    
+    
+    @objc private func adjustInputView(noti: Notification) {
+          guard let userInfo = noti.userInfo else { return }
+          // [x] TODO: 키보드 높이에 따른 인풋뷰 위치 변경
+          guard let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+          
+          if noti.name == UIResponder.keyboardWillShowNotification {
+              let adjustmentHeight = keyboardFrame.height - view.safeAreaInsets.bottom + 40
+         //     bottomLayout.constant = adjustmentHeight
+              print("log:[키보드 사이즈 확인]: \(adjustmentHeight)")
+          } else {
+       //      bottomLayout.constant = 20
+        //      bottomContraint.constant = -15
+          }
+          
+          print("---> Keyboard End Frame: \(keyboardFrame)")
+      }
+    
+    
+    
+    
+    
+    
+    
     
     @objc func sendMessage(){
         
@@ -68,6 +117,13 @@ class GroupChatRoomViewController: UIViewController,UITableViewDelegate,UITableV
        
         return comments.count
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+           self.view.endEditing(true)
+          
+       }
+    
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
