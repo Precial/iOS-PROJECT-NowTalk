@@ -27,6 +27,18 @@ class LoginViewController: UIViewController {
 
          try! Auth.auth().signOut()
         
+        
+//        Database.database().reference().child("agree").child("PersonalAgree").child("title").setValue("test", withCompletionBlock: { (err,ref) in
+//
+//                if(err==nil) {
+//
+//                }
+//
+//            })
+        
+        
+        
+        
         // 버튼 및 텍스트 필드 라이브러리에서 가져오기
         let statusBar = UIView()
         self.view.addSubview(statusBar)
@@ -40,6 +52,12 @@ class LoginViewController: UIViewController {
             m.height.equalTo(40)
             }
         }
+        
+        
+        
+
+        
+        
        
         color = remoteconfig["splash_background"].stringValue
        // statusBar.backgroundColor = UIColor(hex: color)

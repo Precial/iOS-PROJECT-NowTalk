@@ -27,6 +27,10 @@ class SignupViewController: UIViewController {
        @IBOutlet weak var agreeCheckButton: UIButton!
        @IBOutlet weak var agreeCheckButton2:  UIButton!
     
+   /* 이용 약관 체크 변수*/
+    var agreeCodeName = ""
+    
+    
     
     var imgdownloadURL = ""
     
@@ -128,23 +132,23 @@ class SignupViewController: UIViewController {
     
     
     @IBAction func agreeContent1(_ sender: Any) {
-        agreeNextCode=0
+        agreeCodeName = "DefaultAgree"
       
         agreePageNext()
  
     }
     @IBAction func agreeContent2(_ sender: Any) {
-        agreeNextCode=1
+        agreeCodeName = "PersonalAgree"
              
         agreePageNext()
     }
     
     func agreePageNext(){
-               print("log:[특검]")
+            //   print("log:[특검]")
          guard let rvc = self.storyboard?.instantiateViewController(withIdentifier:"showAgree") as? AgreeViewController else {
              return
          }
-        // rvc.receiveCode = self.agreeNextCode // 약관동의 페이지의 사용자가 누른 약관동의 코드를 전송
+          rvc.receiveCodeName = self.agreeCodeName // 약관동의 페이지의 사용자가 누른 약관동의 코드를 전송
          self.navigationController?.pushViewController(rvc, animated: true) // 약관내용보기로 이동
      }
     

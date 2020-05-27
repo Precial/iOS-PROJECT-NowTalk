@@ -7,24 +7,49 @@
 //
 
 import UIKit
+import Firebase
+
 
 class AgreeViewController: UIViewController {
 
+    
+    var receiveCodeName = ""
+  
+    var ref: DatabaseReference!
+  
+    
+    
+    @IBOutlet weak var agreeTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
          navigationController?.navigationBar.isHidden = false
-        // Do any additional setup after loading the view.
+       
+      //  print("log[re특검]: \(self.receiveCodeName)")
+          ref = Database.database().reference()
+        
+        
+        ref.child("agree").child(self.receiveCodeName).observeSingleEvent(of: .value, with: { (snapshot) in
+          // Get user value
+          let value = snapshot.value as? NSDictionary
+            let title = value?["title"] as? String ?? ""
+          print("log[title]: \(title)")
+            
+            let content = value?["content"] as? String ?? ""
+            print("log[content]: \(content)")
+
+            self.agreeTextView.text = content
+           
+            self.navigationController?.navigationBar.topItem?.title = title
+            
+            
+          }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+        
+
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
