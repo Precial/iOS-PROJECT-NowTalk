@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-         try! Auth.auth().signOut()
+        try! Auth.auth().signOut()
         
         
 //        Database.database().reference().child("agree").child("PersonalAgree").child("title").setValue("test", withCompletionBlock: { (err,ref) in

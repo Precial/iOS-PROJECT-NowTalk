@@ -284,16 +284,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message_blue" translatesAutoresizingMaskIntoConstraints="NO" id="zEU-Y5-HSa">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zEU-Y5-HSa">
                                                     <rect key="frame" x="308.33333333333331" y="1" width="61.666666666666686" height="41"/>
+                                                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hre-tx-Khr">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hre-tx-Khr">
                                                     <rect key="frame" x="318.33333333333331" y="11" width="41.666666666666686" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020.05.05.11:11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="db8-zL-xMC">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="2020.05.05.11:11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="db8-zL-xMC">
                                                     <rect key="frame" x="297" y="36" width="73" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -327,6 +328,7 @@
                                             <outlet property="label_message" destination="hre-tx-Khr" id="A1u-Se-4H9"/>
                                             <outlet property="label_read_counter" destination="MP9-53-bwf" id="IgY-PS-XEw"/>
                                             <outlet property="label_timestamp" destination="db8-zL-xMC" id="ghP-u6-UtB"/>
+                                            <outlet property="messageBG" destination="zEU-Y5-HSa" id="6QI-sd-Mh1"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DestinationMessageCell" id="0hs-HZ-xCB" customClass="DestinationMessageCell" customModule="NowTalk" customModuleProvider="target">
@@ -336,11 +338,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message_gray" translatesAutoresizingMaskIntoConstraints="NO" id="34i-wT-iAJ">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="34i-wT-iAJ">
                                                     <rect key="frame" x="55" y="1" width="61.666666666666657" height="40.666666666666664"/>
+                                                    <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sl-Jx-9cM">
-                                                    <rect key="frame" x="65" y="11.000000000000002" width="41.666666666666657" height="20.666666666666671"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sl-Jx-9cM">
+                                                    <rect key="frame" x="65" y="11" width="41.666666666666657" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -358,8 +361,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020.05.05 11:11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIU-U8-aSt">
-                                                    <rect key="frame" x="65" y="47.666666666666664" width="67" height="10.333333333333336"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="2020.05.05 11:11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIU-U8-aSt">
+                                                    <rect key="frame" x="65" y="47.666666666666657" width="67" height="10.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -398,6 +401,7 @@
                                             <outlet property="label_name" destination="pYc-rd-hLx" id="Zg8-Ej-V03"/>
                                             <outlet property="label_read_counter" destination="Cfx-aF-x7t" id="qWh-fX-UgY"/>
                                             <outlet property="label_timestamp" destination="DIU-U8-aSt" id="djl-uf-r6V"/>
+                                            <outlet property="messageBG" destination="34i-wT-iAJ" id="wfC-kH-AgO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -924,23 +928,24 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="708"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyMessageCell" rowHeight="56" id="K9B-4k-8ho" customClass="MymessageCell" customModule="NowTalk" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyMessageCell2" rowHeight="56" id="K9B-4k-8ho" customClass="MymessageCell2" customModule="NowTalk" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K9B-4k-8ho" id="Myg-uy-kBU">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message_blue" translatesAutoresizingMaskIntoConstraints="NO" id="XRB-xe-2lM">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XRB-xe-2lM">
                                                     <rect key="frame" x="308.33333333333331" y="1" width="61.666666666666686" height="41"/>
+                                                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smx-2q-NwZ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smx-2q-NwZ">
                                                     <rect key="frame" x="318.33333333333331" y="11" width="41.666666666666686" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020.05.05.11:11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9XV-aC-xhP">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="2020.05.05.11:11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9XV-aC-xhP">
                                                     <rect key="frame" x="297" y="36" width="73" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -971,23 +976,25 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="label_message" destination="Smx-2q-NwZ" id="ls6-Nd-vpR"/>
-                                            <outlet property="label_read_counter" destination="8Zk-Js-4Jv" id="mhN-1z-NfQ"/>
-                                            <outlet property="label_timestamp" destination="9XV-aC-xhP" id="aPU-5q-hgK"/>
+                                            <outlet property="label_message" destination="Smx-2q-NwZ" id="xhb-dK-Oem"/>
+                                            <outlet property="label_read_counter" destination="8Zk-Js-4Jv" id="VoZ-SY-oro"/>
+                                            <outlet property="label_timestamp" destination="9XV-aC-xhP" id="ug1-8B-Oof"/>
+                                            <outlet property="messageBG" destination="XRB-xe-2lM" id="qxJ-zy-9pb"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DestinationMessageCell" id="S1X-aW-XxM" customClass="DestinationMessageCell" customModule="NowTalk" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DestinationMessageCell2" id="S1X-aW-XxM" customClass="DestinationMessageCell2" customModule="NowTalk" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="84" width="375" height="60.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S1X-aW-XxM" id="H77-9Y-62f">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message_gray" translatesAutoresizingMaskIntoConstraints="NO" id="YPK-4t-Pg2">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YPK-4t-Pg2">
                                                     <rect key="frame" x="55" y="1" width="61.666666666666657" height="40.666666666666664"/>
+                                                    <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSU-0q-Haj">
-                                                    <rect key="frame" x="65" y="11.000000000000002" width="41.666666666666657" height="20.666666666666671"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSU-0q-Haj">
+                                                    <rect key="frame" x="65" y="11" width="41.666666666666657" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1005,8 +1012,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020.05.05 11:11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xh-xh-aYC">
-                                                    <rect key="frame" x="65" y="47.666666666666664" width="67" height="10.333333333333336"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="2020.05.05 11:11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xh-xh-aYC">
+                                                    <rect key="frame" x="65" y="47.666666666666657" width="67" height="10.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -1040,11 +1047,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="imageview_profile" destination="PgA-Vd-wYk" id="L0c-Nd-feA"/>
-                                            <outlet property="label_message" destination="dSU-0q-Haj" id="4lA-AX-8Ul"/>
-                                            <outlet property="label_name" destination="l8B-3x-Zyq" id="7o4-7H-lEe"/>
-                                            <outlet property="label_read_counter" destination="jKr-J4-70M" id="guh-C7-qye"/>
-                                            <outlet property="label_timestamp" destination="7Xh-xh-aYC" id="C5G-aH-LqA"/>
+                                            <outlet property="imageview_profile" destination="PgA-Vd-wYk" id="VJZ-1L-mIc"/>
+                                            <outlet property="label_message" destination="dSU-0q-Haj" id="had-8v-wyO"/>
+                                            <outlet property="label_name" destination="l8B-3x-Zyq" id="f2G-A9-k1w"/>
+                                            <outlet property="label_read_counter" destination="jKr-J4-70M" id="gss-pK-hf5"/>
+                                            <outlet property="label_timestamp" destination="7Xh-xh-aYC" id="2GU-cl-mx9"/>
+                                            <outlet property="messageBG" destination="YPK-4t-Pg2" id="2Rk-a3-VOo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1087,7 +1095,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6dQ-uk-Zfy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5414" y="117"/>
+            <point key="canvasLocation" x="5413.6000000000004" y="116.74876847290641"/>
         </scene>
         <!--Pw Reset View Controller-->
         <scene sceneID="o8k-Sw-43B">
@@ -1214,8 +1222,6 @@
         <image name="followers-1" width="24" height="24"/>
         <image name="hashtag" width="24" height="24"/>
         <image name="logo_talk" width="564" height="564"/>
-        <image name="message_blue" width="12" height="8"/>
-        <image name="message_gray" width="12" height="8"/>
         <image name="more" width="24" height="24"/>
         <image name="people" width="64" height="64"/>
         <image name="profile" width="512" height="512"/>

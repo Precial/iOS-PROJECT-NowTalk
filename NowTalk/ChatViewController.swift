@@ -124,6 +124,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
               view.label_message.text = self.comments[indexPath.row].message
 
               view.label_message.numberOfLines = 0
+            
+            view.messageBG.layer.cornerRadius = 15
 
             if let time = self.comments[indexPath.row].timestamp{
 
@@ -150,7 +152,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
               view.label_message.numberOfLines = 0;
 
-              
+                view.messageBG.layer.cornerRadius = 15
 
               let url = URL(string:(self.userModel?.profileImageUrl)!)
             
@@ -473,6 +475,9 @@ class MymessageCell : UITableViewCell {
     @IBOutlet weak var label_timestamp: UILabel!
     @IBOutlet weak var label_message: UILabel!
     @IBOutlet weak var label_read_counter: UILabel!
+    @IBOutlet weak var messageBG: UIImageView!
+    
+    
 }
 
 
@@ -482,5 +487,7 @@ class DestinationMessageCell : UITableViewCell {
     @IBOutlet weak var label_name: UILabel!
     @IBOutlet weak var label_timestamp: UILabel!
     @IBOutlet weak var label_read_counter: UILabel!
+    @IBOutlet weak var messageBG: UIImageView!
+    
     
 }

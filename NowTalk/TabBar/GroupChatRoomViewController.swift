@@ -130,11 +130,12 @@ class GroupChatRoomViewController: UIViewController,UITableViewDelegate,UITableV
         
             if(self.comments[indexPath.row].uid == uid){
 
-                        let view = tableView.dequeueReusableCell(withIdentifier: "MyMessageCell", for: indexPath) as! MymessageCell
+                        let view = tableView.dequeueReusableCell(withIdentifier: "MyMessageCell2", for: indexPath) as! MymessageCell2
 
                         view.label_message.text = self.comments[indexPath.row].message
 
                         view.label_message.numberOfLines = 0
+                 view.messageBG.layer.cornerRadius = 15
 
                       if let time = self.comments[indexPath.row].timestamp{
 
@@ -153,13 +154,15 @@ class GroupChatRoomViewController: UIViewController,UITableViewDelegate,UITableV
 
                 let destinationUser = users![self.comments[indexPath.row].uid!]
 
-                        let view = tableView.dequeueReusableCell(withIdentifier: "DestinationMessageCell", for: indexPath) as! DestinationMessageCell
+                        let view = tableView.dequeueReusableCell(withIdentifier: "DestinationMessageCell2", for: indexPath) as! DestinationMessageCell2
 
                         view.label_name.text = destinationUser!["userName"] as! String
                         view.label_message.text = self.comments[indexPath.row].message
 
                         view.label_message.numberOfLines = 0;
-
+                        
+                          view.messageBG.layer.cornerRadius = 15
+                
                         let imageUrl = destinationUser!["profileImageUrl"] as! String
 
                         let url = URL(string:(imageUrl))
@@ -313,4 +316,28 @@ extension GroupChatRoomViewController {
         
         print("---> Keyboard End Frame: \(keyboardFrame)")
     }
+}
+
+
+
+class MymessageCell2 : UITableViewCell {
+    
+    @IBOutlet weak var label_timestamp: UILabel!
+    @IBOutlet weak var label_message: UILabel!
+    @IBOutlet weak var label_read_counter: UILabel!
+    @IBOutlet weak var messageBG: UIImageView!
+    
+    
+}
+
+
+class DestinationMessageCell2 : UITableViewCell {
+    @IBOutlet weak var label_message: UILabel!
+    @IBOutlet weak var imageview_profile: UIImageView!
+    @IBOutlet weak var label_name: UILabel!
+    @IBOutlet weak var label_timestamp: UILabel!
+    @IBOutlet weak var label_read_counter: UILabel!
+    @IBOutlet weak var messageBG: UIImageView!
+    
+    
 }
