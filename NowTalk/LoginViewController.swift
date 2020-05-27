@@ -79,6 +79,7 @@ class LoginViewController: UIViewController {
     
        override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true // 다시 초기화면으로 돌아 왔을때 네이게이션 바 제거
+         try! Auth.auth().signOut()
     }
     
     override func didReceiveMemoryWarning() {

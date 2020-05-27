@@ -15,6 +15,7 @@ class SignupViewController: UIViewController {
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var passwordCheck: UITextField!
     @IBOutlet weak var name: UITextField!
     
   
@@ -30,6 +31,10 @@ class SignupViewController: UIViewController {
    /* 이용 약관 체크 변수*/
     var agreeCodeName = ""
     
+    
+    /* 알람창 띄우는 메시지 변수 */
+    var createMessage: String = ""
+    var createTrue: Bool = false
     
     
     var imgdownloadURL = ""
@@ -54,13 +59,13 @@ class SignupViewController: UIViewController {
     /* 회원가입 이벤트 */
     func signupEvent(){
          Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (user, error) in
+           
+            if user != nil {
             let uid = user?.user.uid
+             self.createMessage = "회원가입이 완료되었습니다."
+             self.createTrue = true // 회원가입을 진행해도 되는 비교 값
             
-          
             
-            // Firebase Storage 이미지 저장
-    
-            /* 전송할 이미지를 데이터로 변환 */
                                         guard let sendimage = self.imageView.image, let dataa = sendimage.jpegData(compressionQuality: 1.0) else {
                                                    return
                                                }
@@ -85,11 +90,10 @@ class SignupViewController: UIViewController {
                                            
                                         return
                                                   }
-                                          print("log: \(downloadURL)")
+                                       
                                             self.imgdownloadURL = "\(downloadURL)"
                                             
-                                            print("log [1] = \(self.imgdownloadURL)")
-                                            print("log [2] = \(uid!)")
+                                        
                                             
                                             let sendUid = "\(uid!)"
                                             
@@ -100,7 +104,12 @@ class SignupViewController: UIViewController {
             
                
           //  Database.database().reference().child("users").child(uid!).setValue(["userName":self.name.text!])
-            
+            } else {
+                /* 회원정보가 올바르지 않을 경우 알람창 호출 */
+                self.createMessage = "이미있는 계정이거나 입력하신 정보가 올바르지 않습니다."
+                self.createTrue = false
+                self.createStopMessage(msg: self.createMessage)
+            }
         }
         
     }
@@ -111,7 +120,8 @@ class SignupViewController: UIViewController {
         Database.database().reference().child("users").child(uid).setValue(values, withCompletionBlock: { (err,ref) in
             
             if(err==nil) {
-                self.cancleEvent()
+               self.createStopMessage(msg: self.createMessage)
+                
             }
             
         })
@@ -153,6 +163,38 @@ class SignupViewController: UIViewController {
      }
     
     
+    func createUser() {
+        if self.password.text! == self.passwordCheck.text!{  // 비밀번호랑 재확인 비밀번호가 일치하는지 확인
+              if self.agreeCheckButton.isSelected && self.agreeCheckButton2.isSelected{ // 약관동의가 모두 되어 있는지 확인
+                 signupEvent() // 비밀번호 일치 & 약관을 모두 동의 할 경우 회원가입 하는 함수 호출
+              } else {
+                  createStopMessage(msg: "약관을 모두 동의해주세요.") // 약관을 모두 동의하지 않은 경우 알람창 호출
+              }
+          } else{
+              createStopMessage(msg: "비밀번호가 일치하지 않습니다.") // 비밀번호가 일치하지 않은 경우 알람창 호출
+          }
+      }
+    
+    
+    
+    /* 회원가입 클릭시 성공 or 실패를 알려주는 함수 */
+    func createStopMessage(msg: String){
+        let alert = UIAlertController(title: "", message: msg, preferredStyle: .alert)
+                               alert.addAction(UIAlertAction(title: "확인", style: .default){
+                               UIAlertAction in
+                                  if self.createTrue {
+                                    self.dismiss(animated: true, completion: nil)
+                                }
+                         })
+                        present(alert, animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    
+    
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
            self.view.endEditing(true)
@@ -160,7 +202,7 @@ class SignupViewController: UIViewController {
     
     /* 회원가입 버튼 클릭 시 */
     @IBAction func createBtn(_ sender: Any) {
-        signupEvent()
+        createUser()
     }
     
     /* 가입취소 버튼 클릭 시 */
@@ -169,6 +211,7 @@ class SignupViewController: UIViewController {
     }
     
     func cancleEvent(){
+        try! Auth.auth().signOut()
         dismiss(animated: true, completion: nil)
     }
     
