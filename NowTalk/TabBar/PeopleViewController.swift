@@ -19,6 +19,8 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var array :  [UserModel] = []
 
     var tableview : UITableView!
+    
+
 
     override func viewDidLoad() {
 
@@ -197,6 +199,7 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         label.text = array[indexPath.row].userName
 
+      
         
         let label_comment = cell.label_comment!
         label_comment.snp.makeConstraints { (m) in
@@ -244,10 +247,13 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let userNameTitle = array[indexPath.row].userName!
+        
         print("log[선택한 로우 확인]:\(indexPath.row)")
         
         let view  = self.storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as? ChatViewController
         view?.destinationUid = self.array[indexPath.row].uid
+        view?.userNameTitle  = userNameTitle
         print("log[보내는 로우 확인]:\(self.array[indexPath.row].uid)")
         self.navigationController?.pushViewController(view!, animated: true)
         
@@ -257,7 +263,6 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         super.didReceiveMemoryWarning()
       
-
         // Dispose of any resources that can be recreated.
 
     }

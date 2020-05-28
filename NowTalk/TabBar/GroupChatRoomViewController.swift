@@ -36,12 +36,14 @@ class GroupChatRoomViewController: UIViewController,UITableViewDelegate,UITableV
     
       var peopleCount : Int?
     
+    var userNameTitle = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden  = true
         
    
-        
+            self.navigationItem.title = userNameTitle
         
         
         

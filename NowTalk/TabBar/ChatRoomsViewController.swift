@@ -23,7 +23,7 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
     
       var groupUserName : [String] = []
     
-    
+    var userNameTitle = ""
     
     @IBOutlet weak var tableview: UITableView!
     
@@ -200,7 +200,7 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
                     
              cell.label_title.text = "\(sumName) (\(self.userCount[indexPath.row]))"
                     
-                
+                    self.userNameTitle = "\(sumName) (\(self.userCount[indexPath.row]))"
                     
                     
                                   cell.imageview.layer.cornerRadius = cell.imageview.frame.width/2
@@ -262,7 +262,7 @@ class ChatRoomsViewController: UIViewController,UITableViewDelegate,UITableViewD
                 GroupChatRoomViewController
 
             view.destinationRoom = self.keys[indexPath.row]
-
+            view.userNameTitle = self.userNameTitle
                self.navigationController?.pushViewController(view, animated: true)
 
 

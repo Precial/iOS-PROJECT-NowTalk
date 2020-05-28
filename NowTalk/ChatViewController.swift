@@ -39,7 +39,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     var peopleCount : Int?
     
-    
+    var userNameTitle = ""
 
     public var destinationUid: String? // 나중에 내가 채팅할 대상의 uid
     
@@ -55,8 +55,11 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         checkChatRoom()
         self.tabBarController?.tabBar.isHidden  = true
       
+        
 
-       
+        self.navigationItem.title = userNameTitle
+
+  
 
        
        
