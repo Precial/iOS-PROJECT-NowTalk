@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B44759C247F5197000B1F03 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B447599247F5197000B1F03 /* DetailViewController.swift */; };
+		0B44759D247F5197000B1F03 /* BountyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B44759A247F5197000B1F03 /* BountyInfo.swift */; };
 		0B5CB97F24739F3C00F834F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB97E24739F3C00F834F7 /* AppDelegate.swift */; };
 		0B5CB98124739F3C00F834F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB98024739F3C00F834F7 /* SceneDelegate.swift */; };
 		0B5CB98324739F3C00F834F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB98224739F3C00F834F7 /* ViewController.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B447599247F5197000B1F03 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = ../../../BountyList/BountyList/DetailViewController.swift; sourceTree = "<group>"; };
+		0B44759A247F5197000B1F03 /* BountyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BountyInfo.swift; path = ../../../BountyList/BountyList/BountyInfo.swift; sourceTree = "<group>"; };
 		0B5CB97B24739F3C00F834F7 /* NowTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NowTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B5CB97E24739F3C00F834F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B5CB98024739F3C00F834F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 				0B5CB9CE247791A300F834F7 /* AccountViewController.swift */,
 				0BFBB310247A3AF800437527 /* SelectFriendViewController.swift */,
 				0BFBB312247A5D9600437527 /* GroupChatRoomViewController.swift */,
+				0B44759A247F5197000B1F03 /* BountyInfo.swift */,
+				0B447599247F5197000B1F03 /* DetailViewController.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -272,9 +278,11 @@
 				0BFBB313247A5D9600437527 /* GroupChatRoomViewController.swift in Sources */,
 				0B5CB9CD2477639000F834F7 /* ChatRoomsViewController.swift in Sources */,
 				0B5CB9A3247549E600F834F7 /* PeopleViewController.swift in Sources */,
+				0B44759D247F5197000B1F03 /* BountyInfo.swift in Sources */,
 				0B5CB9A52476066400F834F7 /* ChatViewController.swift in Sources */,
 				0BFBB311247A3AF800437527 /* SelectFriendViewController.swift in Sources */,
 				0B5CB99D2474F8DF00F834F7 /* UserModel.swift in Sources */,
+				0B44759C247F5197000B1F03 /* DetailViewController.swift in Sources */,
 				0B5CB98324739F3C00F834F7 /* ViewController.swift in Sources */,
 				0B5CB9992474ACCA00F834F7 /* SignupViewController.swift in Sources */,
 				0B6FBCCC247CE4060026A380 /* PwResetViewController.swift in Sources */,
