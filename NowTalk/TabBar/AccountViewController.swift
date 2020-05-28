@@ -142,7 +142,11 @@ class BountyViewModel {
             BountyInfo(name: "쇼핑하기"),
             BountyInfo(name: "페이지"),
             BountyInfo(name: "게임"),
-            BountyInfo(name: "음악")
+            BountyInfo(name: "음악"),
+            BountyInfo(name: "만화"),
+            BountyInfo(name: "영화"),
+            BountyInfo(name: "공연"),
+            BountyInfo(name: "택시")
        ]
     
 
