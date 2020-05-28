@@ -17,6 +17,7 @@ class AccountViewController: UIViewController, UICollectionViewDataSource,UIColl
     
     @IBOutlet weak var conditionsCommentButton: UIButton!
     
+    @IBOutlet weak var bottomView: UIView!
     
     let viewModel = BountyViewModel()
     
@@ -52,7 +53,7 @@ class AccountViewController: UIViewController, UICollectionViewDataSource,UIColl
 
 
            self.navigationItem.titleView = lbNavTitle
-
+        self.bottomView.layer.cornerRadius = 15
         
         conditionsCommentButton.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
         
