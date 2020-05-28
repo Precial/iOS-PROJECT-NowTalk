@@ -605,48 +605,45 @@
                                 <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5OO-JD-gEy">
-                                <rect key="frame" x="0.0" y="247" width="375" height="358"/>
+                                <rect key="frame" x="1" y="296" width="375" height="289"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ewd-pC-1Fz">
-                                    <size key="itemSize" width="117" height="152"/>
+                                    <size key="itemSize" width="96" height="95"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GridCell" id="qN6-En-RkL" customClass="GridCell" customModule="BountyList" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="117" height="152"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="95"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="coF-EQ-3fn">
-                                            <rect key="frame" x="0.0" y="0.0" width="117" height="152"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="96" height="95"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CBF-Di-B4B">
-                                                    <rect key="frame" x="0.0" y="0.0" width="93" height="93"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="CBF-Di-B4B" secondAttribute="height" multiplier="7:10" id="Swg-0N-3zz"/>
-                                                    </constraints>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CBF-Di-B4B">
+                                                    <rect key="frame" x="14" y="7.9999999999999964" width="65" height="51.666666666666657"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Luffy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxf-c7-BiD">
-                                                    <rect key="frame" x="8" y="101" width="46" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="300000000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcw-ZW-VOZ">
-                                                    <rect key="frame" x="8" y="127" width="93" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luffy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxf-c7-BiD">
+                                                    <rect key="frame" x="-3" y="72.666666666666671" width="97" height="14.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="12"/>
+                                                    <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CBF-Di-B4B" firstAttribute="top" secondItem="coF-EQ-3fn" secondAttribute="top" constant="8" id="Cmc-4z-g9z"/>
+                                                <constraint firstAttribute="trailing" secondItem="CBF-Di-B4B" secondAttribute="trailing" constant="17" id="DMa-TK-km3"/>
+                                                <constraint firstAttribute="bottom" secondItem="bxf-c7-BiD" secondAttribute="bottom" constant="8" id="ErK-QS-eqA"/>
+                                                <constraint firstItem="CBF-Di-B4B" firstAttribute="leading" secondItem="coF-EQ-3fn" secondAttribute="leading" constant="14" id="TrV-2Q-CAx"/>
+                                                <constraint firstAttribute="trailing" secondItem="bxf-c7-BiD" secondAttribute="trailing" constant="2" id="VJ9-zi-dia"/>
+                                                <constraint firstItem="bxf-c7-BiD" firstAttribute="leading" secondItem="coF-EQ-3fn" secondAttribute="leading" constant="-3" id="zUh-nd-tYc"/>
+                                                <constraint firstItem="bxf-c7-BiD" firstAttribute="top" secondItem="CBF-Di-B4B" secondAttribute="bottom" constant="13" id="zhB-dI-EsL"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="117" height="152"/>
+                                        <size key="customSize" width="96" height="95"/>
                                         <connections>
-                                            <outlet property="bountyLabel" destination="Lcw-ZW-VOZ" id="p5N-OP-wQ7"/>
                                             <outlet property="imgView" destination="CBF-Di-B4B" id="RdM-pW-KMn"/>
                                             <outlet property="nameLabel" destination="bxf-c7-BiD" id="wzJ-S0-vw2"/>
                                         </connections>
@@ -1338,12 +1335,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3000000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOC-EA-ysG">
-                                <rect key="frame" x="87" y="655" width="240" height="57"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -1352,16 +1343,12 @@
                             <constraint firstItem="Wge-4y-j0o" firstAttribute="top" secondItem="L0I-vd-BUF" secondAttribute="top" constant="100" id="9P4-JJ-3Jx"/>
                             <constraint firstItem="1pU-AK-foF" firstAttribute="centerX" secondItem="Wge-4y-j0o" secondAttribute="centerX" id="9wS-I2-ZhE"/>
                             <constraint firstItem="1pU-AK-foF" firstAttribute="top" secondItem="Wge-4y-j0o" secondAttribute="bottom" constant="44.5" id="LjX-BC-a8M"/>
-                            <constraint firstItem="NOC-EA-ysG" firstAttribute="top" secondItem="1pU-AK-foF" secondAttribute="bottom" constant="16" id="PRD-3X-7ig"/>
                             <constraint firstItem="Wge-4y-j0o" firstAttribute="centerX" secondItem="L0I-vd-BUF" secondAttribute="centerX" id="RNY-tA-i53"/>
-                            <constraint firstItem="NOC-EA-ysG" firstAttribute="centerX" secondItem="1pU-AK-foF" secondAttribute="centerX" id="VZF-FX-gCE"/>
                             <constraint firstItem="zYm-cj-Ajn" firstAttribute="trailing" secondItem="L0I-vd-BUF" secondAttribute="trailing" constant="-16" id="u4t-vi-fuD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="L0I-vd-BUF"/>
                     </view>
                     <connections>
-                        <outlet property="bountyLabel" destination="NOC-EA-ysG" id="Jm2-a3-lhI"/>
-                        <outlet property="bountyLableCenterX" destination="VZF-FX-gCE" id="RkN-HU-eI7"/>
                         <outlet property="imgView" destination="Wge-4y-j0o" id="UOl-sP-7ih"/>
                         <outlet property="nameLabel" destination="1pU-AK-foF" id="ftv-JQ-oJN"/>
                         <outlet property="nameLableCenterX" destination="9wS-I2-ZhE" id="P3M-SS-565"/>

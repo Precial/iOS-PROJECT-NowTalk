@@ -117,18 +117,17 @@ class AccountViewController: UIViewController, UICollectionViewDataSource,UIColl
     }
     
 
-    // UICollectionViewDelegateFlowLayout
+  //   UICollectionViewDelegateFlowLayout
     // cell size를 계산할거다 ( 목표: 다양한 디바이스에서 일관적인 디자인을 보여주기 위해)
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let itemSpacing: CGFloat = 10
-//        let textAreaHeigt: CGFloat = 65
-//
-//        let width: CGFloat = (collectionView.bounds.width - itemSpacing)/2
-//        let height: CGFloat = width * 10/7 + textAreaHeigt
-//
-//        return CGSize(width: width, height: height)
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    
+
+        let width: CGFloat = 70
+        let height: CGFloat = 70
+
+        return CGSize(width: width, height: height)
+    }
     
     
 
@@ -136,28 +135,24 @@ class AccountViewController: UIViewController, UICollectionViewDataSource,UIColl
 
 class BountyViewModel {
     let bountyInfoList: [BountyInfo] = [
-            BountyInfo(name: "brook", bounty: 33000000),
-            BountyInfo(name: "chopper", bounty: 50),
-            BountyInfo(name: "franky", bounty: 44000000),
-            BountyInfo(name: "luffy", bounty: 300000000),
-            BountyInfo(name: "nami", bounty: 16000000),
-            BountyInfo(name: "robin", bounty: 80000000),
+        BountyInfo(name: "선물하기"),
+            BountyInfo(name: "이모티콘"),
+            BountyInfo(name: "주문하기"),
+            BountyInfo(name: "스타일"),
+            BountyInfo(name: "쇼핑하기"),
+            BountyInfo(name: "페이지"),
+            BountyInfo(name: "게임"),
+            BountyInfo(name: "음악")
        ]
     
-    var sortedList: [BountyInfo] {
-           let sortedList = bountyInfoList.sorted { prev, next  in
-               return prev.bounty > next.bounty
-           }
-           
-           return sortedList
-       }
+
     
     var numOfBountyInfoList: Int {
         return bountyInfoList.count
     }
     
     func bountyInfo(at index: Int) -> BountyInfo {
-        return sortedList[index]
+        return bountyInfoList[index]
     }
 }
 
@@ -169,7 +164,7 @@ class GridCell: UICollectionViewCell {
     func update(info: BountyInfo) {
             imgView.image =  info.image
             nameLabel.text = info.name
-            bountyLabel.text = "\(info.bounty)"
+            
     }
     
 }
