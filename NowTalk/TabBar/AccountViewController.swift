@@ -13,13 +13,22 @@ import Firebase
 class AccountViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
  
     
-
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    
     
     @IBOutlet weak var conditionsCommentButton: UIButton!
     
     @IBOutlet weak var bottomView: UIView!
     
+    var images = ["banner1.jpg","banner2.jpg"]
+    
     let viewModel = BountyViewModel()
+    
+    var autoNum:Int = 1
+    
+    var timer = Timer() // timer 변수
+    
     
     
     //performSegue 가 실행되기전 준비하는 과정
@@ -56,8 +65,37 @@ class AccountViewController: UIViewController, UICollectionViewDataSource,UIColl
         self.bottomView.layer.cornerRadius = 15
         
         conditionsCommentButton.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
+        imgView.image = UIImage(named: images[0])
+        
+        
+          pageControl.numberOfPages = 2
+              pageControl.currentPage = 0
+              pageControl.pageIndicatorTintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+              pageControl.currentPageIndicatorTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+              imgView.image = UIImage(named: String(images[0]))
+              
+              timer = Timer.scheduledTimer(timeInterval: 4, target: self,
+                                           selector: #selector(autoChange), userInfo: nil, repeats: true)
+        
+        
         
     }
+    
+    @objc func autoChange(){
+        
+        if autoNum == 2{
+            autoNum = 0
+        }
+        pageControl.currentPage = autoNum
+        imgView.image = UIImage(named: String(images[autoNum]))
+        autoNum += 1
+    }
+    
+    @IBAction func pageChanged(_sender: UIPageControl) {
+        imgView.image = UIImage(named: images[pageControl.currentPage])
+    }
+    
+    
     
 
     @objc func showAlert() {
