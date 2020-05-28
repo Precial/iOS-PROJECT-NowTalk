@@ -36,6 +36,10 @@ class SelectFriendViewController: UIViewController,UITableViewDelegate, UITableV
         view.checkbox.delegate = self
         view.checkbox.tag = indexPath.row
         
+        
+        view.imageviewProfile.layer.cornerRadius = 50/2
+        view.imageviewProfile.clipsToBounds = true
+        
         return view
     }
     
@@ -56,6 +60,8 @@ class SelectFriendViewController: UIViewController,UITableViewDelegate, UITableV
         let nsDic = user as! NSDictionary
         
         Database.database().reference().child("chatrooms").childByAutoId().child("users").setValue(nsDic)
+        
+        backAlert()
         
     }
     
@@ -118,6 +124,20 @@ class SelectFriendViewController: UIViewController,UITableViewDelegate, UITableV
     }
     
 
+    
+    func backAlert(){
+        let alert = UIAlertController(title: "알림", message: "채팅방이 생성되었습니다.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "확인", style: .default){
+                UIAlertAction in
+                 self.navigationController?.popViewController(animated: true)
+          })
+        
+     
+        
+         present(alert, animated: true, completion: nil)
+        }
+    
+    
 
 
 }
